@@ -7,7 +7,7 @@
         %p 未選択
       .main_header_user
         %h あなたのお名前
-        %p #{current_user.name}さん
+        %p #{current_user.name}
       .main_header_menu
         = link_to root_path, class:"btn-edit" do
           %i.fas.fa-pen 
@@ -17,11 +17,11 @@
       .main_kids_select
         お子さんを選択して下さい🎵
       .main_kids_selectlist
-        .kids
+        - current_user.kids.each do |kid|
           = link_to root_path do
-            .kids_picture
-              = current_user.kids.picture
-            .kids_name
-              = current_user.kids.name
-            .kids_class
-              = current_user.kids.class
+            .kid_name
+              %p #{kid.name}ちゃん
+            .kid_grade
+              %p #{kid.grade}組
+            -# = kid.picture
+            -# .kids_picture

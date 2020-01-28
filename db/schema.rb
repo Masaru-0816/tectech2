@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_072825) do
+ActiveRecord::Schema.define(version: 2020_01_28_084827) do
 
   create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "class", null: false
     t.integer "sex", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "picture"
+    t.string "grade"
     t.index ["name"], name: "index_kids_on_name", unique: true
   end
 
