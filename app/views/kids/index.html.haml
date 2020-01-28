@@ -17,20 +17,12 @@
       .main_kids_select
         お子さんを選択して下さい🎵
       .main_kids_selectlist
-        - current_user.kids.each do |kid|
-          .kid_pic
-
-          .main_kids_selectlist_pic
-          = image_tag href='kii.jpg', width: '300px', class: 'kid_pic'
-        .main_kids_selectlist_name
-          鈴木きい ちゃん
-        .main_kids_selectlist_class
-          たんぽぽ組
-
-- current_user.groups.each do |group|
-      .group
-        = link_to group_messages_path(group) do
-          .group_name
-            = group.name
-          .group_message
-            = group.show_last_message
+        -current_user.kids.each do |kid|
+          .kid
+            = link_to root_path do
+              .kid_picture
+                = kid.picture
+              .kid_name
+                = kid.name
+              .kid_class
+                = kid.class
