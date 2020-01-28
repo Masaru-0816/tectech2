@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'top#index'
   
   resources :users, only: [:edit, :update]
-  resources :kids, only: [:index, :edit, :update]
+  resources :kids, only: [:create, :index, :edit, :update]
 
 end
