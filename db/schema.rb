@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_021749) do
+ActiveRecord::Schema.define(version: 2020_01_28_072825) do
 
   create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,7 +18,17 @@ ActiveRecord::Schema.define(version: 2020_01_28_021749) do
     t.integer "sex", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "picture"
     t.index ["name"], name: "index_kids_on_name", unique: true
+  end
+
+  create_table "kids_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "kid_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kid_id"], name: "index_kids_users_on_kid_id"
+    t.index ["user_id"], name: "index_kids_users_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,4 +45,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_021749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kids_users", "kids"
+  add_foreign_key "kids_users", "users"
 end
