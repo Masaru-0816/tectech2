@@ -23,41 +23,43 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
 ### Association
 - has_many :kids through: :kids_users
 - has_many :kids_users
-- has_many :posts
+- has_many :notices
+
 
 ## kidsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |name|index|unique: frue|
-|age|integer|null: false|
-|class|string|null: false|
+|grade|string|null: false|
+|sex|integer|null: false|
+|picture|binary|
 t.timestamps
-
 ### Association
-- has_many :users through: :groups_users
-- has_many :groups_users
-- has_many :posts
+- has_many :users through: :kids_users
+- has_many :kids_users
+- has_many :notices
 
-## groups_usersテーブル
+
+## kids_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|group_id|references|foreign_key: true|
+|user|references|foreign_key: true|
+|kid|references|foreign_key: true|
 ### Association
-- belongs_to :group
+- belongs_to :kid
 - belongs_to :user
 
-## postsテーブル
+
+## noticesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|title|string|
 |content|string|
 |image|string|
-|user|reference||foreign_key: true|
-|group|reference|foreign_key: true|
+|grade|reference|foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :group
+- has_many :grades
 
 * Database initialization
 

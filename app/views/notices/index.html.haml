@@ -1,0 +1,26 @@
+.wrapper
+  = render 'shared/side_bar'
+  .main
+    .main_header
+      .main_header_kid
+        = @kid.name
+        %p 未選択
+      .main_header_user
+        %h あなたのお名前
+        %p #{current_user.name}
+      .main_header_menu
+        = link_to root_path, class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to root_path, class:"btn-logout" do
+          %i.fas.fa-sign-out-alt
+    .main_notice
+      .main_notice_lists
+        .main_notice_list
+          - @kid.grade.notices.each do |notice|
+            = link_to root_path do
+              .notice_title
+                = notice.title
+              .notice_content
+                = notice.content
+              .notice_date
+                = notice.created_at
