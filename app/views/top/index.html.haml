@@ -6,7 +6,7 @@
         
     .header_user
       .header_user_about
-        = link_to root_path, class:"btn" do
+        =  link_to "#anchor1" do
           %p ABOUT
       -if user_signed_in?
         .header_user_signup
@@ -30,7 +30,7 @@
     .main_pic
       = image_tag "top2.jpg", size: "850x700", alt:"top2"
     .main_about
-      %h1 テクノロジーで 
+      %h1 テクノロジーで
       %h1 子育てをもっともっと楽に！ 
   .service
     .service_left
@@ -38,6 +38,7 @@
       %p 朝のバタバタで忙しい時間、仕事帰りのお迎え時間、疲れが残る夜に、少しでも育児を楽にして、親子の時間、また自分を過ごしたいものです。
       %p TecTechは育児・保育に関わる事務負担を減らし、保護者・保育者の方々にとって有意義な時間を過ごして頂きたい。
       %p そんな想いから生まれたサービスです。
+    %a{ :id =>  'anchor1' } 
     .service_right
       = image_tag "top3.jpg", size: "850x700", alt:"top2"
 
