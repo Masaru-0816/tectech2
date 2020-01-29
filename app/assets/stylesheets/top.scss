@@ -45,7 +45,7 @@
         height: 100%;
         width: 130px;
         text-align: center;
-        .btn-about {
+        .btn {
           display: inline-block;
           height: 80%;
           line-height: 80px;
@@ -65,7 +65,7 @@
             line-height: 80px;
           }
         }
-        .btn-about:hover {
+        .btn:hover {
           opacity: 0.6;
         }
       }
@@ -73,7 +73,7 @@
         height: 100%;
         width: 130px;
         text-align: center;
-        .btn-signup {
+        .btn {
           display: inline-block;
           height: 80%;
           line-height: 80px;
@@ -93,7 +93,7 @@
             line-height: 80px;
           }
         }
-        .btn-signup:hover {
+        .btn:hover {
           opacity: 0.6;
         }
       }
@@ -104,7 +104,7 @@
         text-align: center;
         margin-right: 20px;
         border-radius: 30px;
-        .btn-login {
+        .btn {
           display: inline-block;
           height: 80%;
           line-height: 80px;
@@ -124,7 +124,7 @@
             line-height: 80px;
           }
         }
-        .btn-login:hover {
+        .btn:hover {
           opacity: 0.6;
         }
       }
