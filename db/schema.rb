@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_060951) do
+ActiveRecord::Schema.define(version: 2020_01_29_075611) do
+
+  create_table "grade_notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "grade_id"
+    t.bigint "notice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grade_id"], name: "index_grade_notices_on_grade_id"
+    t.index ["notice_id"], name: "index_grade_notices_on_notice_id"
+  end
+
+  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_grades_on_name", unique: true
+  end
 
   create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_060951) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "grade_notices", "grades"
+  add_foreign_key "grade_notices", "notices"
   add_foreign_key "kids_users", "kids"
   add_foreign_key "kids_users", "users"
 end
