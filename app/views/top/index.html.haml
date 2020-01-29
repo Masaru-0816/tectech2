@@ -10,6 +10,9 @@
           %p ABOUT
 
       .header_user_signup
+      - if user_signed_in?
+        = link_to new_user_registration_path, class:"btn-signup" do
+
         = link_to new_user_registration_path, class:"btn-signup" do
           %p SIGN-UP
       .header_user_login
