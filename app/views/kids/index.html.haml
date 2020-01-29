@@ -16,12 +16,15 @@
     .main_kids
       .main_kids_select
         お子さんを選択して下さい🎵
-      .main_kids_selectlist
-        - current_user.kids.each do |kid|
+      - current_user.kids.each do |kid|
+        .main_kids_selectlist
           = link_to root_path do
-            .kid_name
-              %p #{kid.name}ちゃん
-            .kid_grade
+            .main_kids_selectlist_image
+              = image_tag kid.image, width:300
+            .main_kids_selectlist_name
+              -if kid.sex == 0
+                %p #{kid.name}くん
+              -else
+                %p #{kid.name}ちゃん
+            .main_kids_selectlist_grade
               %p #{kid.grade}組
-            -# = kid.picture
-            -# .kids_picture

@@ -149,7 +149,6 @@
       &_selectlist {
         height: 250px;
         width: 100%;
-        padding: 60px 120px 30px 120px;
         display: flex;
         font-size: 30px;
         font-weight: bold;
@@ -166,6 +165,22 @@
           width: 100%;
           text-decoration: none;
           opacity: 1;
+        }
+        &_image {
+          padding: 20px 50px;
+          width: 40%;
+          float: left;
+          border-radius: 50px;
+        }
+        &_name {
+          line-height: 250px;
+          width: 30%;
+          float: left;
+        }
+        &_grade {
+          line-height: 250px;
+          width: 30%;
+          float: left;
         }
       }
     }
