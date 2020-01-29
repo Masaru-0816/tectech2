@@ -1,12 +1,12 @@
 @import "reset";
+@import "config/colors";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "top";
 @import "modules/user";
 @import "kids";
 @import "notices";
+@import "modules/flash";
 // @import "users";
 // @import "posts";
 // @import "groups";
-// @import "config/colors";
-// @import "modules/flash";
