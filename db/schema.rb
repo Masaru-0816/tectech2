@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_101603) do
+ActiveRecord::Schema.define(version: 2020_01_28_140118) do
 
   create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 2020_01_28_101603) do
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.string "image"
-    t.bigint "kid_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kid_id"], name: "index_notices_on_kid_id"
-    t.index ["user_id"], name: "index_notices_on_user_id"
+    t.string "title"
+    t.string "grade"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,6 +56,4 @@ ActiveRecord::Schema.define(version: 2020_01_28_101603) do
 
   add_foreign_key "kids_users", "kids"
   add_foreign_key "kids_users", "users"
-  add_foreign_key "notices", "kids"
-  add_foreign_key "notices", "users"
 end

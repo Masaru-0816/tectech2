@@ -54,13 +54,12 @@ t.timestamps
 ## noticesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|title|string|
 |content|string|
 |image|string|
-|user|reference||foreign_key: true|
-|kid|reference|foreign_key: true|
+|grade|reference|foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :kid
+- has_many :grades
 
 * Database initialization
 
