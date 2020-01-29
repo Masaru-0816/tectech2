@@ -9,9 +9,9 @@
         %h あなたのお名前
         %p #{current_user.name}
       .main_header_menu
-        = link_to root_path, class:"btn-edit" do
+        = link_to edit_user_path(current_user), class:"btn-edit" do
           %i.fas.fa-pen 
-        = link_to root_path, class:"btn-logout" do
+        = link_to destroy_user_session_path, class:"btn" do
           %i.fas.fa-sign-out-alt
     .main_kids
       .main_kids_select
