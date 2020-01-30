@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'top#index'
   
   resources :users, only: [:new, :create, :edit, :update, :destroy]
+  
   resources :kids, only: [:create, :index, :edit, :update] do
     resources :notices, only: [:index, :create]
+    resources :diaries, only: [:new, :create]
   end
 end

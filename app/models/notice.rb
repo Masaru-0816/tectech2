@@ -1,4 +1,5 @@
 class Notice < ApplicationRecord
+  
   belongs_to :kid
   belongs_to :user
   has_many :group_notices

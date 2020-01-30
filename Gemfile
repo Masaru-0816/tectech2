@@ -71,3 +71,5 @@ gem 'rails_admin', '~> 2.0.0'
 gem 'cancancan', '~> 2.0'
 
 gem 'rails-i18n', '~> 5.1'
+
+gem 'pry-rails'
