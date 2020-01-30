@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_075611) do
+ActiveRecord::Schema.define(version: 2020_01_30_065340) do
 
-  create_table "grade_notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "grade_id"
+  create_table "group_notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
     t.bigint "notice_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["grade_id"], name: "index_grade_notices_on_grade_id"
-    t.index ["notice_id"], name: "index_grade_notices_on_notice_id"
+    t.index ["group_id"], name: "index_group_notices_on_group_id"
+    t.index ["notice_id"], name: "index_group_notices_on_notice_id"
   end
 
-  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_grades_on_name", unique: true
+    t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
   create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_075611) do
     t.integer "sex", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "grade"
     t.string "image"
+    t.integer "group_id"
     t.index ["name"], name: "index_kids_on_name", unique: true
   end
 
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_075611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.string "grade"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,8 +69,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_075611) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "grade_notices", "grades"
-  add_foreign_key "grade_notices", "notices"
+  add_foreign_key "group_notices", "groups"
+  add_foreign_key "group_notices", "notices"
   add_foreign_key "kids_users", "kids"
   add_foreign_key "kids_users", "users"
 end

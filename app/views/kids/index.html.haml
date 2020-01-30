@@ -18,7 +18,7 @@
         お子さんを選択して下さい🎵
       - current_user.kids.each do |kid|
         .main_kids_selectlist
-          = link_to root_path do
+          = link_to kid_notices_path(kid) do
             .main_kids_selectlist_image
               = image_tag kid.image, width:300
             .main_kids_selectlist_name
@@ -27,4 +27,4 @@
               -else
                 %p #{kid.name}ちゃん
             .main_kids_selectlist_grade
-              %p #{kid.grade}組
+              %p #{kid.group.name}組
