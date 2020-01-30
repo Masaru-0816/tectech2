@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GradeNoticeTest < ActiveSupport::TestCase
+class GroupNoticeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
