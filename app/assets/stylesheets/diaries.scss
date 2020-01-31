@@ -28,7 +28,7 @@
       }
     }
     
-    &_diary_blight {
+    &_diary1 {
       background-color: rgb(253, 253, 136);
       padding: 20px 0px;
       height: calc(100% / 5);
@@ -136,43 +136,45 @@
         }
       }
     } 
-    &_notice {
+    &_diary {
       background-color: rgb(255, 225, 169);
       height: 80%;
       width: 100%;
       overflow: scroll;
-      &_group {
-        background-color: orange;
-        height: 30px;
-        width: 100%;
-        padding-left: 30px;
-        font-weight: bold;
-      }
-      &_lists {
-        background-color: skyblue;
+      &_today {
+        padding: 30px 40px;
         height: 100%;
         width: 100%;
-        padding: 20px 30px;
-        .main_notice_list {
-          padding: 30px 0px;
-          .notice_title {
-            font-weight: bold;
-            text-align: center;
-            font-size: 20px;
-            padding-bottom: 10px;
-          }
-          .notice_date {
-            text-align: end;
-            font-size: 15px;
-            padding-bottom: 10px;
-          }
-          .notice_content {
-            font-size: 15px;
-          }
-          .notice_image {
-            height: 100%;
-            width: 100%;
-          }
+        font-size: 30px;
+        &_date {
+          background-color: rgb(245, 95, 49);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+        }
+        &_dinner {
+          background-color: rgb(248, 88, 187);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+        }
+        &_breakfast {
+          background-color: rgb(180, 100, 245);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+        }
+        &_excreta {
+          background-color: rgb(74, 77, 240);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+        }
+        &_sleep {
+          background-color: rgb(97, 245, 109);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
         }
       }
     }
