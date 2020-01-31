@@ -17,7 +17,6 @@
     border-right: 1px solid rgb(139, 139, 139);
     
     &_notice {
-      background-color: rgb(253, 253, 136);
       padding: 20px 0px;
       height: calc(100% / 5);
       a {
@@ -29,7 +28,8 @@
       }
     }
     
-    &_diary {
+    &_diary_blight {
+      background-color: rgb(253, 253, 136);
       padding: 20px 0px;
       height: calc(100% / 5);
       a {
