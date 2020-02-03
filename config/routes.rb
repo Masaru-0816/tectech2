@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :notices, only: [:index, :create]
     resources :diaries, only: [:index, :create]
     resources :messages, only: [:index, :create]
+    resources :albums, only: [:index, :create, :show]
   end
 end

@@ -10,7 +10,7 @@
         %i.fas.fa-pencil-alt    
         %p 日誌
 
-    .side_bar_message1
+    .side_bar_message
       = link_to kid_messages_path(@kid), class:"btn-message" do
         %i.far.fa-comments
         %p メッセージ
@@ -43,24 +43,12 @@
         = link_to kids_path, class:"btn" do
           %i.fas.fa-undo-alt
 
-    .main_message
-      .main_message_list
-        - @messages.each do |message|
-          .main_message_list_name
-            = message.user.name
-          .main_message_list_date
-            = message.created_at.to_s(:created_at)
-          .main_message_list_content
-            - if message.content.present?
-              = message.content
-          = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
-      .main_message_form
-        .main_message_form_input
-          = form_for [@kid, @message] do |f|
-            = f.text_field :content, class: "main_message_form_content", placeholder: "メッセージを入力して下さい"
-            .main_message_form_input_image
-              = f.label :image, class: "main_message_form_form_image" do
-                = icon("fas", "image", class: "icon")
-                = f.file_field :image, class: "hidden"
-            = f.submit "送信", class: "form__submit"
+    .main_albums
+      - @albums.each do |album|
+        .main_album
+          .main_album_title
+            = album.title
+          .main_album_image
+            = image_tag album.image.url, class: 'album_image'
+          .main_album_date
+            = album.date
