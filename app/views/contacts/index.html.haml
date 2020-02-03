@@ -7,7 +7,7 @@
 
     .side_bar_diary
       = link_to kid_diaries_path(@kid), class:"btn-diary" do
-        %i.fas.fa-pencil-alt
+        %i.fas.fa-pencil-alt    
         %p 日誌
 
     .side_bar_message
@@ -42,19 +42,19 @@
           %i.fas.fa-pen 
         = link_to kids_path, class:"btn" do
           %i.fas.fa-undo-alt
-          
-    .main_notice
-      .main_notice_group
-        #{@kid.group.name}組のご両親へのお知らせ🎵
-      .main_notice_lists
-        - @kid.group.notices.each do |notice|
-          .main_notice_list
-            .notice_title
-              = notice.title
-            .notice_date
-              = notice.updated_at.strftime("%Y-%m-%d %H:%M")
-            -if notice.content.present?
-              .notice_content
-                = notice.content
-              .notice_image
-                = notice.image
+
+    .main_contacts
+      .main_contact
+        ご不明点や緊急のご連絡の際には、下記へお問い合わせ下さい。
+        .main_contact_school
+          保育所名：立川栄保育園
+          -# %p #{@contact.school_name}
+        .main_contact_address
+          住所：〒196-0033 東京都立川市栄町5-54-26
+          -# = @contact.school_name
+        .main_contact_telephone
+          電話番号：042(543)0816
+          -# = @contact.telephone
+        .main_contact_person
+          連絡担当者：鈴木賢（すずきまさる）
+          -# = @contact.person_name
