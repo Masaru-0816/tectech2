@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper_notices {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  .side_bar {
+    z-index: 1;
+    height: 100vh;
+    width: 300px;
+    text-align: center;
+    font-size: 80px;
+    border-right: 1px solid rgb(139, 139, 139);
+    
+    &_notice {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: red;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_diary1 {
+      background-color: rgb(253, 253, 136);
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(255, 136, 0);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_message {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(51, 255, 0);
+      } 
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_picture {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(0, 225, 255);
+      } 
+      p {
+        font-size: 20px;
+      }   
+    }
+    
+    &_contact {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(153, 0, 255);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+    
+  .main {
+    height: 100%;
+    width: calc(100% - 300px);
+    &_header {
+      height: 20%;
+      display: flex;
+      border-bottom: 1px solid rgb(139, 139, 139);
+      &_kid {
+        background-color: rgb(252, 123, 101);
+        padding: 20px 30px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_user {
+        background-color: rgb(137, 247, 196);
+        padding: 20px 30px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_menu {
+        background-color: rgb(248, 148, 226);
+        width: 15%;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .btn-edit {
+          color: green;
+        }
+        .btn-logout {
+          color: brown;
+        }
+      }
+    } 
+    &_diary {
+      background-color: rgb(255, 225, 169);
+      height: 80%;
+      width: 100%;
+      overflow: scroll;
+      display: flex;
+      justify-content: space-around;
+      &_today {
+        padding: 30px 40px;
+        height: 100%;
+        width: 100%;
+        font-size: 25px;
+        &_upper {
+          height: calc(100%/5);
+          width: 100%;
+          p {
+            width: 50%;
+          }         
+          .button {
+            text-align: right;
+            display       : inline-block;
+            border-radius : 20%;          /* 角丸       */
+            font-size     : 18pt;        /* 文字サイズ */
+            text-align    : center;      /* 文字位置   */
+            cursor        : pointer;     /* カーソル   */
+            padding       : 9px 19px;   /* 余白       */
+            background    : #ff7f00;     /* 背景色     */
+            color         : #ffffff;     /* 文字色     */
+            line-height   : 1em;         /* 1行の高さ  */
+            transition    : .3s;         /* なめらか変化 */
+            box-shadow    : 9px 9px 2px #666666;  /* 影の設定 */
+            border        : 2px solid #ff7f00;    /* 枠の指定 */
+          }
+          .button:hover {
+            box-shadow    : none;        /* カーソル時の影消去 */
+            color         : #ff7f00;     /* 背景色     */
+            background    : #ffffff;     /* 文字色     */
+          }
+        }
+        &_dinner {
+          background-color: rgb(248, 88, 187);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+          display: flex;
+          justify-content: space-evenly;
+          display: flex;
+          align-items: center;
+          &_content {
+            padding-right: 30px;
+          }
+        }
+        &_breakfast {
+          background-color: rgb(180, 100, 245);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+          display: flex;
+          justify-content: space-evenly;
+          display: flex;
+          align-items: center;
+        }
+        &_excreta {
+          background-color: rgb(74, 77, 240);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+          display: flex;
+          justify-content: space-evenly;
+          display: flex;
+          align-items: center;
+          &_times {
+            width: 40%;
+          }
+          &_condition {
+            width: 40%;
+          }
+        }
+        &_sleep {
+          background-color: rgb(97, 245, 109);
+          height: calc(100%/5);
+          width: 100%;
+          padding: 20px 30px;
+          display: flex;
+          align-items: center;
+          &_time {
+            padding-left: 20px;
+            width: 100%;
+            padding-left: 20px;
+            display: flex;
+            // justify-content: space-evenly;
+            p {
+              padding: 0px 50px;
+              margin-right: 100px;
+              width: 40%;
+            }
+            .main_diary_today_sleep {
+              width: 30%;
+            }
+
+          }
+        }
+      }
+    }
+  }
+} 

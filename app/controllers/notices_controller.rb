@@ -1,8 +1,8 @@
 class NoticesController < ApplicationController
   before_action :set_kid
-
+  
   def index
-    @notice = Notice.includes(:user)
+    @notice = Notice.includes(:kid)
   end
 
   def create
@@ -18,8 +18,8 @@ class NoticesController < ApplicationController
 
   private
 
-  def message_params
-    # params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+  def notice_params
+    # params.require(:notice).permit(:titile, :content, :image).merge(user_id: current_user.id)
   end
 
   def set_kid

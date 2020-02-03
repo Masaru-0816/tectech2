@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_065340) do
+ActiveRecord::Schema.define(version: 2020_02_03_092223) do
+
+  create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "date"
+  end
+
+  create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "dinner_content"
+    t.string "dinner_amount"
+    t.string "breakfast_content"
+    t.string "breakfast_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "kid_id"
+    t.integer "excreta_times"
+    t.string "excreta_condition"
+    t.time "sleep"
+  end
+
+  create_table "group_albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_group_albums_on_album_id"
+    t.index ["group_id"], name: "index_group_albums_on_group_id"
+  end
 
   create_table "group_notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -47,12 +74,32 @@ ActiveRecord::Schema.define(version: 2020_01_30_065340) do
     t.index ["user_id"], name: "index_kids_users_on_user_id"
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.string "image"
+    t.bigint "kid_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kid_id"], name: "index_messages_on_kid_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+  end
+
+  create_table "pictures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "album_id"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,8 +116,12 @@ ActiveRecord::Schema.define(version: 2020_01_30_065340) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "group_albums", "albums"
+  add_foreign_key "group_albums", "groups"
   add_foreign_key "group_notices", "groups"
   add_foreign_key "group_notices", "notices"
   add_foreign_key "kids_users", "kids"
   add_foreign_key "kids_users", "users"
+  add_foreign_key "messages", "kids"
+  add_foreign_key "messages", "users"
 end

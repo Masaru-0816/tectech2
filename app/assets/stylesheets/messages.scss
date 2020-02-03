@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper_notices {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  .side_bar {
+    z-index: 1;
+    height: 100vh;
+    width: 300px;
+    text-align: center;
+    font-size: 80px;
+    border-right: 1px solid rgb(139, 139, 139);
+    
+    &_notice {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: red;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_diary {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(255, 136, 0);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_message1 {
+      background-color: rgb(253, 253, 136);
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(51, 255, 0);
+      } 
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_picture {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(0, 225, 255);
+      } 
+      p {
+        font-size: 20px;
+      }   
+    }
+    
+    &_contact {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(153, 0, 255);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+    
+  .main {
+    height: 100%;
+    width: calc(100% - 300px);
+    &_header {
+      height: 20%;
+      display: flex;
+      border-bottom: 1px solid rgb(139, 139, 139);
+      &_kid {
+        background-color: rgb(252, 123, 101);
+        padding: 20px 30px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_user {
+        background-color: rgb(137, 247, 196);
+        padding: 20px 30px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_menu {
+        background-color: rgb(248, 148, 226);
+        width: 15%;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .btn-edit {
+          color: green;
+        }
+        .btn-logout {
+          color: brown;
+        }
+      }
+    } 
+
+    
+    &_message {
+      height: 80%;
+      width: 100%;
+      &_list {
+        background-color: #fafafa;
+        height: 90%;
+        width: 100%;
+        overflow: scroll;
+        padding: 35px 40px;
+        .messages {
+          .message-list {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 12px;
+            .message-name {
+              color: #333;
+              height: 30px;
+              line-height: 30px;
+              font-size: 16px;
+              font-weight: bold;
+            }
+            .message-date {
+              color: #999;
+              height: 30px;
+              font-size: 14px;
+              padding-left: 10px;
+            }
+          }
+          .message-content {
+            color: #333;
+            height: 25px;
+            line-height: 25px;
+            font-size: 14px;
+          }
+        }
+      }
+      
+      &_form {
+        background-color:#d2d2d2;
+        height: 10%;
+        width: 100%;
+        &_input {
+          padding: 5px 50px;
+          height: 100%;
+          width: 100%;
+          position: relative;
+          vertical-align: middle;
+          .main_message_form_content {
+            width: calc(100% - 130px);
+            padding: 0px 40px 0px;
+            border: solid 0px;
+            background-color: #fff;
+            height: 40px;
+          }
+          &_image {
+            position: absolute;
+            top: 10px;
+            right: 200px;
+            cursor: pointer;
+            i {
+              color: black;
+              font-size: 30px;
+            }
+            .hidden {
+              display: none;
+            }
+          }
+          .form__submit {
+            vertical-align: middle;
+            background-color: #f8a201;
+            color: #fff;
+            height: 50px;
+            width: 100px;
+            margin-left: 10px;
+            border-radius: 30px;
+          }
+        }
+      }
+    }
+  }
+}

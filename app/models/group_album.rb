@@ -1,0 +1,2 @@
+class GroupAlbum < ApplicationRecord
+end

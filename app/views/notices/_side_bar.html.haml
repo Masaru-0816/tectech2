@@ -1,16 +1,16 @@
 .side_bar
-  .side_bar_notice
+  .side_bar_notice_blight
     = link_to kid_notices_path(@kid), class:"btn-information" do
       %i.far.fa-newspaper
       %p お知らせ
 
   .side_bar_diary
-    = link_to kid_diaries_path(@kid), class:"btn-diary" do
-      %i.fas.fa-pencil-alt    
+    = link_to new_kid_diary_path(@kid), class:"btn-diary" do
+      %i.fas.fa-pencil-alt
       %p 日誌
 
   .side_bar_message
-    = link_to kid_messages_path(@kid), class:"btn-message" do
+    = link_to root_path, class:"btn-message" do
       %i.far.fa-comments
       %p メッセージ
 
