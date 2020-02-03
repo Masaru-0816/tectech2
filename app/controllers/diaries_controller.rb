@@ -1,26 +1,30 @@
 class DiariesController < ApplicationController
   before_action :set_kid
 
+  def index
+    @diary = Diary.new
+  end
+
   def new
     @diary = Diary.new
-    @diaries = @kid.diaries.includes(:user)
+    @diaries = @kid.diaries.includes(:kid)
   end
 
   def create
     @diary = @kid.diaries.new(diary_params)
     if @diary.save
-      redirect_to new_kid_diary, notice: "日誌を登録しました"
+      redirect_to kid_diaries_path, notice: "日誌を登録しました"
     else
       @diaries = @kid.diaries.includes(:user)
       flash.now[:alert] = "情報を入力してください"
-      render :new
+      render :index
     end
   end
 
   private
 
   def diary_params
-      params.require(:diary).permit(:dinner_content)
+      params.require(:diary).permit(:dinner_content, :breakfast_content, :excreta_times, :sleep).merge(kid_id: @kid.id)
   end
 
   def set_kid

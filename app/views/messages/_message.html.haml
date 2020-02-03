@@ -1,0 +1,10 @@
+.messages{data: {message: {id: message.id}}}
+  .message_list
+    .message_name
+      = message.user.name
+    .message_date
+      = message.created_at.to_s(:created_at)
+  .message_content
+    - if message.content.present?
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

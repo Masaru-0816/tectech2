@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   resources :kids, only: [:create, :index, :edit, :update] do
     resources :notices, only: [:index, :create]
-    resources :diaries, only: [:new, :create]
+    resources :diaries, only: [:index, :create]
+    resources :messages, only: [:index, :create]
   end
 end

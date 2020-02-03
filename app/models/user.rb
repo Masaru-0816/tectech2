@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :kids_users
   has_many :kids, through: :kids_users
   has_many :notices
-
+  has_many :messages
 end
