@@ -19,7 +19,7 @@
     &_notice {
       padding: 20px 0px;
       height: calc(100% / 5);
-      a {
+      i {
         text-decoration: none;
         color: red;
       }
@@ -31,7 +31,7 @@
     &_diary {
       padding: 20px 0px;
       height: calc(100% / 5);
-      a {
+      i {
         text-decoration: none;
         color: rgb(255, 136, 0);
       }
@@ -43,7 +43,7 @@
     &_message {
       padding: 20px 0px;
       height: calc(100% / 5);
-      a {
+      i {
         text-decoration: none;
         color: rgb(51, 255, 0);
       } 
@@ -52,10 +52,10 @@
       }
     }
     
-    &_picture {
+    &_album {
       padding: 20px 0px;
       height: calc(100% / 5);
-      a {
+      i {
         text-decoration: none;
         color: rgb(0, 225, 255);
       } 
@@ -67,7 +67,7 @@
     &_contact {
       padding: 20px 0px;
       height: calc(100% / 5);
-      a {
+      i {
         text-decoration: none;
         color: rgb(153, 0, 255);
       }

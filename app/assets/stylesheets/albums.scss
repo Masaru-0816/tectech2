@@ -41,7 +41,6 @@
     }
     
     &_message1 {
-      background-color: rgb(253, 253, 136);
       padding: 20px 0px;
       height: calc(100% / 5);
       a {
@@ -54,6 +53,7 @@
     }
     
     &_album {
+      background-color: rgb(253, 253, 136);
       padding: 20px 0px;
       height: calc(100% / 5);
       a {
@@ -138,84 +138,23 @@
     } 
 
     
-    &_message {
+    &_albums {
       height: 80%;
       width: 100%;
-      &_list {
-        background-color: #fafafa;
-        height: 90%;
-        width: 100%;
-        overflow: scroll;
-        padding: 35px 40px;
-        .messages {
-          .message-list {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 12px;
-            .message-name {
-              color: #333;
-              height: 30px;
-              line-height: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            }
-            .message-date {
-              color: #999;
-              height: 30px;
-              font-size: 14px;
-              padding-left: 10px;
-            }
-          }
-          .message-content {
-            color: #333;
-            height: 25px;
-            line-height: 25px;
-            font-size: 14px;
-          }
+      padding: 30px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      .main_album {
+        height: 50%;
+        width: calc(100% / 3);
+        padding: 0px 20px 20px;
+        &_title {
         }
-      }
-      
-      &_form {
-        background-color:#d2d2d2;
-        height: 10%;
-        width: 100%;
-        &_input {
-          padding: 5px 50px;
-          height: 100%;
-          width: 100%;
-          position: relative;
-          vertical-align: middle;
-          .main_message_form_content {
-            width: calc(100% - 130px);
-            padding: 0px 40px 0px;
-            border: solid 0px;
-            background-color: #fff;
-            height: 40px;
-          }
-          &_image {
-            position: absolute;
-            top: 10px;
-            right: 200px;
-            cursor: pointer;
-            i {
-              color: black;
-              font-size: 30px;
-            }
-            .hidden {
-              display: none;
-            }
-          }
-          .form__submit {
-            vertical-align: middle;
-            background-color: #f8a201;
-            color: #fff;
-            height: 50px;
-            width: 100px;
-            margin-left: 10px;
-            border-radius: 30px;
-          }
+        &_image {
+          height: 200px;
+        }
+        &_date {
+          height: 20px;
         }
       }
     }
