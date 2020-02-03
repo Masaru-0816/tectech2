@@ -142,11 +142,11 @@
       height: 80%;
       width: 100%;
       &_list {
-        background-color: #fafafa;
-        height: 90%;
-        width: 100%;
         overflow: scroll;
-        padding: 35px 40px;
+        background-color: #fafafa;
+        height: calc(100% - 60px);
+        width: 100%;
+        padding: 30px 30px;
         .messages {
           .message-list {
             height: 100%;
@@ -179,7 +179,7 @@
       
       &_form {
         background-color:#d2d2d2;
-        height: 10%;
+        height: 100px;
         width: 100%;
         &_input {
           padding: 5px 50px;
@@ -196,7 +196,7 @@
           }
           &_image {
             position: absolute;
-            top: 10px;
+            top: 15px;
             right: 200px;
             cursor: pointer;
             i {
@@ -208,10 +208,10 @@
             }
           }
           .form__submit {
-            vertical-align: middle;
             background-color: #f8a201;
             color: #fff;
             height: 50px;
+            line-height: 50px;
             width: 100px;
             margin-left: 10px;
             border-radius: 30px;
