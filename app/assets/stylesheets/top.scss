@@ -98,8 +98,6 @@
           display: inline-block;
           height: 80%;
           line-height: 80px;
-          // max-width: 130px;
-          // text-align: left;
           background-color: rgba(189, 139, 3, 0.877);
           font-size: 16px;
           color: #FFF;
@@ -120,7 +118,6 @@
       }
       &_login {
         height: 100%;
-        // background-color: orange;
         width: 130px;
         text-align: center;
         margin-right: 20px;
@@ -129,8 +126,6 @@
           display: inline-block;
           height: 80%;
           line-height: 80px;
-          // max-width: 130px;
-          // text-align: left;
           background-color: rgba(189, 139, 3, 0.877);
           font-size: 16px;
           color: #FFF;
@@ -151,16 +146,29 @@
       }
       &_menu {
         height: 100%;
-        // background-color: orange;
         width: 130px;
         text-align: center;
         margin-right: 20px;
         border-radius: 30px;
-        .btn-menu {
-          color: rgba(189, 139, 3, 0.877);
-          font-size: 50px;
+        .btn {
+          display: inline-block;
+          height: 80%;
+          line-height: 80px;
+          background-color: rgba(247, 90, 51, 0.877);
+          font-size: 16px;
+          color: #FFF;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 0px 16px;
+          border: 1px dashed #FFF;
+          box-shadow: 0px 0px 0px 5px rgba(248, 81, 30, 0.795);
+          /* box-shadowで外枠を */
+          p {
+            color: white;
+            line-height: 80px;
+          }
         }
-        .btn-menu:hover {
+        .btn:hover {
           opacity: 0.6;
         }
       }

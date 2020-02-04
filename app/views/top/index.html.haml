@@ -25,9 +25,13 @@
         .header_user_login
           = link_to new_user_session_path, class:"btn" do
             %p ログイン
-      .header_user_menu
-        = link_to root_path, class:"btn-menu" do
-          %i.fas.fa-bars
+
+      -if current_user.try(:admin?)
+        .header_user_menu
+          = link_to rails_admin_path, class:"btn" do
+            %p 管理者ページ
+
+        
   .main
     .main_copyrights
     .main_pic

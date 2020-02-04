@@ -6,6 +6,5 @@ class Kid < ApplicationRecord
   belongs_to :group
   has_many :diaries
   has_many :messages
-  belongs_to :contact
   
 end
