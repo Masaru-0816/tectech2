@@ -58,7 +58,7 @@
               .main_diary_today_dinner_amount
                 %p どれぐらい食べましたか？
                 = f.label :dinner_amount, for:"dinner_amount_much", class: "dinner_much" do
-                  = f.select :dinner_amount, ["たくさん", "普通", "少なめ","食べていない"], id:"dinner_amount_much", class: "main_diary_today_dinner"
+                  = f.select :dinner_amount, ["下記より選択して下さい", "たくさん", "普通", "少なめ","食べていない"], id:"dinner_amount_much", class: "main_diary_today_dinner"
 
             .main_diary_today_breakfast
               .main_diary_today_breakfast_content
@@ -66,7 +66,7 @@
                 = f.text_field :breakfast_content, class: "main_diary_today_breakfast", placeholder: "入力して下さい"
               .main_diary_today_breakfast_amount
                 %p どれぐらい食べましたか？
-                = f.select :dinner_amount, ["たくさん", "普通", "少なめ","食べていない"], class: "main_diary_today_dinner"
+                = f.select :breakfast_amount, ["下記より選択して下さい", "たくさん", "普通", "少なめ","食べていない"], class: "main_diary_today_dinner"
 
             .main_diary_today_excreta
               .main_diary_today_excreta_times
@@ -74,7 +74,7 @@
                 = f.number_field :excreta_times, min: 0, class: "main_diary_today_excreta_times"
               .main_diary_today_excreta_condition
                 %p 便の状態を選択して下さい
-                = f.select :excreta_condition, ["普通便", "軟便", "下痢"], class: "main_diary_today_excreta_condition"
+                = f.select :excreta_condition, ["下記より選択して下さい", "普通便", "軟便", "下痢"], class: "main_diary_today_excreta_condition"
 
             .main_diary_today_sleep
               .main_diary_today_sleep_time

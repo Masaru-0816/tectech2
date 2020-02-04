@@ -24,7 +24,7 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-      params.require(:diary).permit(:dinner_content, :breakfast_content, :excreta_times, :sleep).merge(kid_id: @kid.id)
+      params.require(:diary).permit(:dinner_content, :dinner_amount, :breakfast_content, :breakfast_amount, :excreta_times, :excreta_condition, :sleep).merge(kid_id: @kid.id)
   end
 
   def set_kid
