@@ -26,10 +26,11 @@
           = link_to new_user_session_path, class:"btn" do
             %p ログイン
 
-      -if current_user.try(:admin?)
-        .header_user_menu
-          = link_to rails_admin_path, class:"btn" do
-            %p 管理者ページ
+      -# 管理者ページ
+      -# -if current_user.try(:admin?)
+      -#   .header_user_menu
+      -#     = link_to rails_admin_path, class:"btn" do
+      -#       %p 管理者ページ
 
         
   .main

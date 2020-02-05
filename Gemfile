@@ -67,7 +67,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
-gem 'rails_admin', '~> 2.0.0'
 gem 'cancancan', '~> 2.0'
 
 gem 'rails-i18n', '~> 5.1'
