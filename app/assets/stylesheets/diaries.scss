@@ -152,26 +152,27 @@
           p {
             width: 100%;
             font-weight: bold;
+            font-size: 35px;
           }         
           .button {
             text-align: right;
             display       : inline-block;
-            border-radius : 20%;          /* 角丸       */
-            font-size     : 18pt;        /* 文字サイズ */
-            text-align    : center;      /* 文字位置   */
-            cursor        : pointer;     /* カーソル   */
-            padding       : 9px 19px;   /* 余白       */
-            background    : #ff7f00;     /* 背景色     */
-            color         : #ffffff;     /* 文字色     */
-            line-height   : 1em;         /* 1行の高さ  */
-            transition    : .3s;         /* なめらか変化 */
-            box-shadow    : 9px 9px 2px #666666;  /* 影の設定 */
-            border        : 2px solid #ff7f00;    /* 枠の指定 */
+            border-radius : 20%;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 9px 19px;
+            background    : #ff7f00;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 9px 9px 2px #666666;
+            border        : 2px solid #ff7f00;
           }
           .button:hover {
-            box-shadow    : none;        /* カーソル時の影消去 */
-            color         : #ff7f00;     /* 背景色     */
-            background    : #ffffff;     /* 文字色     */
+            box-shadow    : none;
+            color         : #ff7f00;
+            background    : #ffffff;
           }
         }
         &_dinner {
@@ -184,6 +185,9 @@
           align-items: center;
           &_content {
             padding-right: 30px;
+            .main_diary_today_dinner {
+              height: 20px;
+            }
           }
         }
         &_breakfast {
@@ -193,8 +197,13 @@
           display: flex;
           justify-content: space-evenly;
           display: flex;
-          align-items: center;
-        }
+          &_content {
+            padding-right: 30px;
+            .main_diary_today_breakfast {
+              height: 20px;
+            }
+          }
+        }  
         &_excreta {
           height: calc(100%/5);
           width: 100%;
