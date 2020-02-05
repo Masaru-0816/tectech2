@@ -140,6 +140,7 @@
       padding: 30px 40px;
       display: flex;
       flex-wrap: wrap;
+      overflow: auto;
       .main_album {
         height: 50%;
         width: calc(100% / 3);
@@ -164,12 +165,6 @@ html, body {
 
 html {
   background: #eee;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box {

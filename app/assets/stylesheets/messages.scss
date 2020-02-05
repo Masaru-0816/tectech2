@@ -175,7 +175,7 @@
       
       &_form {
         background-color:#d2d2d2;
-        height: 100px;
+        height: 60px;
         width: 100%;
         &_input {
           padding: 5px 50px;
@@ -225,12 +225,6 @@ html, body {
 
 html {
   background: #eee;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box {

@@ -15,7 +15,7 @@
     width: 300px;
     text-align: center;
     font-size: 80px;
-    border-right: 1px solid rgb(199, 196, 196);
+    border-right: 1px solid rgb(139, 139, 139);
     
     &_notice {
       padding: 20px 0px;
@@ -84,7 +84,7 @@
     &_header {
       height: 20%;
       display: flex;
-      border-bottom: 1px solid rgb(212, 212, 212);
+      border-bottom: 1px solid rgb(139, 139, 139);
       &_kid {
         padding: 20px 30px;
         width: 40%;
@@ -195,11 +195,6 @@ html {
   background: #eee;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .box {
   width: 300px;
