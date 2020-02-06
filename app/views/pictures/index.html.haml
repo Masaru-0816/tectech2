@@ -7,7 +7,7 @@
 
     .side_bar_diary
       = link_to kid_diaries_path(@kid), class:"btn-diary" do
-        %i.fas.fa-pencil-alt
+        %i.fas.fa-pencil-alt    
         %p 日誌
 
     .side_bar_message
@@ -21,7 +21,7 @@
         %p 写真
 
     .side_bar_contact
-      = link_to kid_pictures_path(@kid), class:"btn-contact" do
+      = link_to kid_contacts_path(@kid), class:"btn-contact" do
         %i.fas.fa-phone
         %p お問い合わせ
 
@@ -42,19 +42,15 @@
           %i.fas.fa-pen 
         = link_to kids_path, class:"btn" do
           %i.fas.fa-undo-alt
-          
-    .main_notice
-      .main_notice_group
-        #{@kid.group.name}組のご両親へのお知らせ🎵
-      .main_notice_lists
-        - @kid.group.notices.each do |notice|
-          .main_notice_list
-            .notice_title
-              = notice.title
-            .notice_date
-              = notice.updated_at.strftime("%Y-%m-%d %H:%M")
-            -if notice.content.present?
-              .notice_content
-                = notice.content
-              .notice_image
-                = notice.image
+
+    .main_albums
+      -# .main_pictures_group
+      -#   #{@kid.group.name}組の写真🎵
+      - @kid.group.pictures.each do |picture|
+        .main_album
+          .main_album_name
+            = picture.name
+          .main_album_image
+            = image_tag picture.image.url, class: 'picture_image'
+          .main_album_date
+            = picture.date

@@ -4,6 +4,8 @@ class AlbumsController < ApplicationController
   def index
     @album = Album.new
     @albums = @kid.group.albums.includes(:user)
+    @picture = Picture.new
+    @pictures = @kid.group.albums.includes(:user)
   end
 
   def show

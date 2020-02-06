@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper_notices {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: rgb(252, 233, 164);
+
+  .side_bar {
+    z-index: 1;
+    height: 100vh;
+    width: 300px;
+    text-align: center;
+    font-size: 80px;
+    border-right: 1px solid rgb(139, 139, 139);
+    
+    &_notice {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: red;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_diary {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(255, 136, 0);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_message1 {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(51, 255, 0);
+      } 
+      p {
+        font-size: 20px;
+      }
+    }
+    
+    &_album {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(0, 225, 255);
+      } 
+      p {
+        font-size: 20px;
+      }   
+    }
+    
+    &_contact {
+      padding: 20px 0px;
+      height: calc(100% / 5);
+      a {
+        text-decoration: none;
+        color: rgb(153, 0, 255);
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+    
+  .main {
+    height: 100%;
+    width: calc(100% - 300px);
+    &_header {
+      height: 20%;
+      display: flex;
+      border-bottom: 1px solid rgb(139, 139, 139);
+      &_kid {
+        padding: 20px 30px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_user {
+        padding: 20px 30px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        h {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+      &_menu {
+        width: 15%;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .btn-edit {
+          color: green;
+        }
+        .btn-logout {
+          color: brown;
+        }
+      }
+    } 
+
+    
+    &_pictures {
+      height: 80%;
+      width: 100%;
+      padding: 30px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
+      .main_picture {
+        height: 100%;
+        width: 50px;
+        &_title {
+        }
+        &_image {
+          height: 200px;
+        }
+        &_date {
+          height: 20px;
+        }
+      }
+    }
+  }
+}
