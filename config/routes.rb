@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :create, :edit, :update, :destroy]
   
-  resources :kids, only: [:create, :index, :edit, :update] do
+  resources :kids, only: [:index] do
     resources :notices, only: [:index, :create]
     resources :diaries, only: [:index, :create]
     resources :messages, only: [:index, :create]
     resources :albums, only: [:index, :create, :show]
     resources :pictures, only: [:index, :create, :show]
     resources :contacts, only: [:index, :create]
+  end
+  
+  namespace :admin do
+    resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
   end
 end
