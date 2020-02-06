@@ -46,9 +46,11 @@
     .main_albums
       - @albums.each do |album|
         .main_album
-          .main_album_title
+          .main_pic_title
             = album.title
           .main_album_image
             = image_tag album.image.url, class: 'album_image'
           .main_album_date
             = album.date
+
+    

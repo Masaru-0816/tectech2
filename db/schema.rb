@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_085554) do
+ActiveRecord::Schema.define(version: 2020_02_06_033719) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2020_02_04_085554) do
     t.index ["notice_id"], name: "index_group_notices_on_notice_id"
   end
 
+  create_table "group_pictures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "picture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_pictures_on_group_id"
+    t.index ["picture_id"], name: "index_group_pictures_on_picture_id"
+  end
+
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -124,6 +133,7 @@ ActiveRecord::Schema.define(version: 2020_02_04_085554) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -145,6 +155,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_085554) do
   add_foreign_key "group_albums", "groups"
   add_foreign_key "group_notices", "groups"
   add_foreign_key "group_notices", "notices"
+  add_foreign_key "group_pictures", "groups"
+  add_foreign_key "group_pictures", "pictures"
   add_foreign_key "kids_users", "kids"
   add_foreign_key "kids_users", "users"
   add_foreign_key "messages", "kids"

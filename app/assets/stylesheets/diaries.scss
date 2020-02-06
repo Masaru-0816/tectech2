@@ -7,6 +7,7 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  background-color: rgb(252, 233, 164);
 
   .side_bar {
     z-index: 1;
@@ -151,26 +152,27 @@
           p {
             width: 100%;
             font-weight: bold;
+            font-size: 35px;
           }         
           .button {
             text-align: right;
             display       : inline-block;
-            border-radius : 20%;          /* 角丸       */
-            font-size     : 18pt;        /* 文字サイズ */
-            text-align    : center;      /* 文字位置   */
-            cursor        : pointer;     /* カーソル   */
-            padding       : 9px 19px;   /* 余白       */
-            background    : #ff7f00;     /* 背景色     */
-            color         : #ffffff;     /* 文字色     */
-            line-height   : 1em;         /* 1行の高さ  */
-            transition    : .3s;         /* なめらか変化 */
-            box-shadow    : 9px 9px 2px #666666;  /* 影の設定 */
-            border        : 2px solid #ff7f00;    /* 枠の指定 */
+            border-radius : 20%;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 9px 19px;
+            background    : #ff7f00;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 9px 9px 2px #666666;
+            border        : 2px solid #ff7f00;
           }
           .button:hover {
-            box-shadow    : none;        /* カーソル時の影消去 */
-            color         : #ff7f00;     /* 背景色     */
-            background    : #ffffff;     /* 文字色     */
+            box-shadow    : none;
+            color         : #ff7f00;
+            background    : #ffffff;
           }
         }
         &_dinner {
@@ -183,6 +185,9 @@
           align-items: center;
           &_content {
             padding-right: 30px;
+            .main_diary_today_dinner {
+              height: 20px;
+            }
           }
         }
         &_breakfast {
@@ -192,8 +197,13 @@
           display: flex;
           justify-content: space-evenly;
           display: flex;
-          align-items: center;
-        }
+          &_content {
+            padding-right: 30px;
+            .main_diary_today_breakfast {
+              height: 20px;
+            }
+          }
+        }  
         &_excreta {
           height: calc(100%/5);
           width: 100%;
@@ -234,82 +244,3 @@
     }
   }
 } 
-
-// 背景
-html, body {
-  height: 100%;
-}
-
-html {
-  background: #eee;
-}
-
-.box {
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
-  box-shadow: 0 2px 30px rgba(black, .2);
-  background: lighten(#f0f4c3, 10%);
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-}
-
-.wave {
-  opacity: .4;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  background: rgb(252, 206, 139);
-  width: 700px;
-  height: 700px;
-  margin-left: -250px;
-  margin-top: -250px;
-  transform-origin: 50% 48%;
-  border-radius: 43%;
-  animation: drift 3000ms infinite linear;
-}
-
-.wave.-three {
-  animation: drift 5000ms infinite linear;
-}
-
-.wave.-two {
-  animation: drift 7000ms infinite linear;
-  opacity: .1;
-  background: yellow;
-}
-
-.box:after {
-  content: '';
-  display: block;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
-  z-index: 11;
-  transform: translate3d(0, 0, 0);
-}
-
-.title {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  line-height: 400px;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
-  color: white;
-  text-transform: uppercase;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: .4em;
-  font-size: 40px;
-  text-shadow: 0 1px 0 rgba(black, .1);
-  text-indent: .3em;
-}
-@keyframes drift {
-  from { transform: rotate(0deg); }
-  from { transform: rotate(360deg); }
-}

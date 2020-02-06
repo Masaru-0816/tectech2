@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :diaries, only: [:index, :create]
     resources :messages, only: [:index, :create]
     resources :albums, only: [:index, :create, :show]
+    resources :pictures, only: [:index, :create, :show]
     resources :contacts, only: [:index, :create]
   end
 end
