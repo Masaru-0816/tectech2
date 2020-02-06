@@ -1,0 +1,20 @@
+.admin_kids_form
+  %h1 管理者ページ
+  = form_for @kid do |f|
+    .admin_kids_form__field
+      .admin_kids_form__field--left
+        = f.label :name, class: 'admin_kid_body_label'
+      .admin_kids_form__field--right
+        = f.text_field :name, class: 'admin_kids_body_right', placeholder: '児童名を入力してください'
+
+    .admin_kids_form__field
+      .admin_kids_form__field--left
+        %label.admin_kid_form__label{:for => "admin_kid_ユーザーを設定"} ユーザーを設定
+
+      .admin_kids_form__field--right
+        .admin_kids_form__search.clearfix
+          %input#user-search-field.admin_kids_form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+        #user-search-result
+
+    .admin_kid_form__field--bottom
+      = f.submit class: 'admin_kid_form__action-btn'
