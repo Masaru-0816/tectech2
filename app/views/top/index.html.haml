@@ -8,8 +8,10 @@
       = link_to root_path, class:"btn-logo" do
         = image_tag "logo1.png", size: "80x100", alt: "logo"
     .header_language
-      -# - I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale|
-      -#   = link_to "locale", i18n_url_for(params.merge(locale: locale))
+      = link_to root_path(locale: "ja") do
+        %p Japanese　/
+      = link_to root_path(locale: "en") do
+        %p 　English
         
     .header_user
       .header_user_about
@@ -50,7 +52,7 @@
     .main_about
       %h1 
         = t ".テクノロジーで"
-      %h1
+      %h2
         = t ".子育てをもっともっと楽に！" 
   .service
     .service_left
