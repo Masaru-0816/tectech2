@@ -1,33 +1,308 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Cannot delete record because a dependent %{record} exists
+          has_many: Cannot delete record because dependent %{record} exist
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+    prompts:
+      second: Second
+      minute: Minute
+      hour: Hour
+      day: Day
+      month: Month
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      model_invalid: 'Validation failed: %{errors}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      required: must exist
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: "%{count} errors prohibited this %{model} from being saved"
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  top:
+    index:
+      ページ先頭へ: TOP
+      サービス内容: ABOUT
+      メイン画面: Kids Page
+      ログアウト: Log out
+      新規登録: Sign up
+      ログイン: Log in
+      管理者ページ: Admin Page
+      テクノロジーで: With Technology,
+      子育てをもっともっと楽に！: You'll enjoy childcare!!
+      保育園での面倒な事務作業をパパッと解決！: You can decrease tiresome paper work!
+      朝のバタバタで忙しい時間、仕事帰りのお迎え時間、疲れが残る夜に、少しでも育児を楽にして、親子の時間、また自分を過ごしたいものです。: You're so busy in the moring and very tired in the evening. So we want reduce your burden and wish you to spend a good time with your baby and kids. 
+      TecTechは育児・保育に関わる事務負担を減らし、保護者・保育者の方々にとって有意義な時間を過ごして頂きたい。: We, TecTech want to reduce a lot of paper work related to childcare and instead, you to have a great time with you baby and kids.
+      そんな想いから生まれたサービスです。: This service was borned by such our feelings.
+      新規登録: Sign up
+      ログインはこちらから！: Log in
+  kids:
+    index:
+      お子様のお名前: Kid's Name
+      未選択: No Selected
+      あなたのお名前: Your Name
+      お子さんを選択して下さい🎵:  Please select a kid🎵
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us
+  notices:
+    index:
+      お子様のお名前: Kid's Name
+      あなたのお名前: Your Name
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us
+  messages:
+    index:
+      お子様のお名前: Kid's Name
+      あなたのお名前: Your Name
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us
+  diaries:
+    index:
+      お子様のお名前: Kid's Name
+      あなたのお名前: Your Name
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us
+      夜ごはん: Dinner
+      どれぐらい食べましたか？: How much?
+      朝ごはん: Breakfast
+      便の回数を入力して下さい: Times of stool?
+      便の状態を選択して下さい: Condition of stool?
+      睡眠時間を入力して下さい: How long slept last ngiht?
+  albums:
+    index:
+      お子様のお名前: Kid's Name
+      あなたのお名前: Your Name
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us  
+  contacts:
+    index:
+      お子様のお名前: Kid's Name
+      あなたのお名前: Your Name
+      お知らせ: Notice
+      日誌: Diary
+      メッセージ:  Message
+      写真: Photo
+      お問い合わせ: Contact us
+      ご不明点や緊急のご連絡の際には、下記へお問い合わせ下さい。: Please contact us if you have unknown and emergency notice!
+      保育所名：立川栄保育園: Name of Nursery：Tachikawa Nursery School
+      住所：〒196-0033 東京都立川市栄町5-54-26:  Address：5-54-26, Sakae-cho, Tachikawa city, Tokyo
+      電話番号：042(543)0816: Tel：(+81)042-543-7192
+      連絡担当者：鈴木賢（すずきまさる）: Contact Person：Masaru Suzuki(Mr.)
+
+  
+
+
+
+
+
+
+

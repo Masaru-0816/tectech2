@@ -72,3 +72,5 @@ gem 'cancancan', '~> 2.0'
 gem 'rails-i18n', '~> 5.1'
 
 gem 'pry-rails'
+
+gem 'strong_password', '~> 0.0.8'

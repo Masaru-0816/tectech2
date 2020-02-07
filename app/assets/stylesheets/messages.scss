@@ -41,7 +41,7 @@
       }
     }
     
-    &_message1 {
+    &_message {
       padding: 20px 0px;
       height: calc(100% / 5);
       a {
@@ -50,6 +50,7 @@
       } 
       p {
         font-size: 20px;
+        color: black;
       }
     }
     
