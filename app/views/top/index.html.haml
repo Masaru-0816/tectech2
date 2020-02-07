@@ -1,36 +1,46 @@
 .body
   .topIcon{ id: "topScroll", onclick: "goTop()"}
-    ページ先頭へ
+    = t ".ページ先頭へ"
 
   .header
+
     .header_logo
       = link_to root_path, class:"btn-logo" do
         = image_tag "logo1.png", size: "80x100", alt: "logo"
+    .header_language
+      -# - I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale|
+      -#   = link_to "locale", i18n_url_for(params.merge(locale: locale))
         
     .header_user
       .header_user_about
         =  link_to "#anchor1" do
-          %p ABOUT
+          %p
+            = t ".サービス内容"
       -if user_signed_in?
         .header_user_signup
           = link_to kids_path, class:"btn" do
-            %p メイン画面
+            %p 
+              = t ".メイン画面"
         .header_user_login
           = link_to destroy_user_session_path, class:"btn" do
-            %p ログアウト
+            %p 
+              = t ".ログアウト"
       -else
         .header_user_signup
           = link_to new_user_registration_path, class:"btn" do
-            %p 新規登録
+            %p 
+              = t ".新規登録"
         .header_user_login
           = link_to new_user_session_path, class:"btn" do
-            %p ログイン
+            %p 
+            = t ".ログイン"
 
       -# 管理者ページ
-      -# -if current_user.try(:admin?)
+      -# -if @current_user.admin?
       -#   .header_user_menu
-      -#     = link_to rails_admin_path, class:"btn" do
-      -#       %p 管理者ページ
+      -#     = link_to root_path, class:"btn" do
+      -#       %p 
+      -#         = t ".管理者ページ"
 
         
   .main
@@ -38,22 +48,30 @@
     .main_pic
       = image_tag "top2.jpg", size: "850x700", alt:"top2"
     .main_about
-      %h1 テクノロジーで
-      %h1 子育てをもっともっと楽に！ 
+      %h1 
+        = t ".テクノロジーで"
+      %h1
+        = t ".子育てをもっともっと楽に！" 
   .service
     .service_left
-      %h1 保育園での面倒な事務作業をパパッと解決！
-      %p 朝のバタバタで忙しい時間、仕事帰りのお迎え時間、疲れが残る夜に、少しでも育児を楽にして、親子の時間、また自分を過ごしたいものです。
-      %p TecTechは育児・保育に関わる事務負担を減らし、保護者・保育者の方々にとって有意義な時間を過ごして頂きたい。
-      %p そんな想いから生まれたサービスです。
+      %h1 
+        = t ".保育園での面倒な事務作業をパパッと解決！"
+      %p 
+        = t ".朝のバタバタで忙しい時間、仕事帰りのお迎え時間、疲れが残る夜に、少しでも育児を楽にして、親子の時間、また自分を過ごしたいものです。"
+      %p 
+        = t ".TecTechは育児・保育に関わる事務負担を減らし、保護者・保育者の方々にとって有意義な時間を過ごして頂きたい。"
+      %p 
+        = t ".そんな想いから生まれたサービスです。"
     %a{ :id =>  'anchor1' } 
     .service_right
       = image_tag "top3.jpg", size: "850x700", alt:"top2"
 
   .account
     .account_left
-      %p 新規登録
-      %p ログインはこちらから！
+      %p 
+        = t ".新規登録"
+      %p 
+        = t ".ログインはこちらから！"
 
     .account_right
 

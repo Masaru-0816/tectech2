@@ -1,13 +1,39 @@
 .wrapper
-  = render 'side.bar'
-  .wave.-one
+  .side_bar
+    .side_bar_notice
+      %i.far.fa-newspaper
+      %p 
+        = t ".お知らせ"
+
+    .side_bar_diary
+      %i.fas.fa-pencil-alt
+      %p 
+        = t ".日誌"
+
+    .side_bar_message
+      %i.far.fa-comments
+      %p 
+        = t ".メッセージ"
+
+    .side_bar_album
+      %i.fas.fa-camera-retro
+      %p 
+        = t ".写真"
+
+    .side_bar_contact
+      %i.fas.fa-phone
+      %p 
+        = t ".お問い合わせ"
   .main
     .main_header
       .main_header_kid
-        %h お子様のお名前
-        %p 未選択
+        %h 
+          = t ".お子様のお名前"
+        %p 
+          = t ".未選択"
       .main_header_user
-        %h あなたのお名前
+        %h 
+          = t ".あなたのお名前"
         %p #{current_user.name}
       .main_header_menu
         = link_to edit_user_path(current_user), class:"btn-edit" do
@@ -16,7 +42,7 @@
           %i.fas.fa-sign-out-alt
     .main_kids
       .main_kids_select
-        お子さんを選択して下さい🎵
+        = t ".お子さんを選択して下さい🎵"
       - current_user.kids.each do |kid|
         .main_kids_selectlist
           = link_to kid_notices_path(kid) do

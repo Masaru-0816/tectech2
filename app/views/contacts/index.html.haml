@@ -3,39 +3,46 @@
     .side_bar_notice
       = link_to kid_notices_path(@kid), class:"btn-information" do
         %i.far.fa-newspaper
-        %p お知らせ
+        %p 
+          = t ".お知らせ"
 
     .side_bar_diary
       = link_to kid_diaries_path(@kid), class:"btn-diary" do
         %i.fas.fa-pencil-alt    
-        %p 日誌
+        %p 
+          = t ".日誌"
 
     .side_bar_message
       = link_to kid_messages_path(@kid), class:"btn-message" do
         %i.far.fa-comments
-        %p メッセージ
+        %p 
+          = t ".メッセージ"
 
     .side_bar_album
       = link_to kid_albums_path(@kid), class:"btn-picture" do
         %i.fas.fa-camera-retro
-        %p 写真
+        %p 
+          = t ".写真"
 
     .side_bar_contact
       = link_to kid_contacts_path(@kid), class:"btn-contact" do
         %i.fas.fa-phone
-        %p お問い合わせ
+        %p 
+          = t ".お問い合わせ"
 
   .main
     .main_header
       .main_header_kid
-        %h お子様のお名前
+        %h 
+          = t ".お子様のお名前"
         -if @kid.sex == 0
           %p #{@kid.name}くん
         -else
           %p #{@kid.name}ちゃん
         %p #{@kid.group.name}組
       .main_header_user
-        %h あなたのお名前
+        %h 
+          = t ".あなたのお名前"
         %p #{current_user.name}
       .main_header_menu
         = link_to edit_user_path(current_user), class:"btn-edit" do
@@ -45,16 +52,12 @@
 
     .main_contacts
       .main_contact
-        ご不明点や緊急のご連絡の際には、下記へお問い合わせ下さい。
+        = t ".ご不明点や緊急のご連絡の際には、下記へお問い合わせ下さい。"
         .main_contact_school
-          保育所名：立川栄保育園
-          -# %p #{@contact.school_name}
+          = t ".保育所名：立川栄保育園"
         .main_contact_address
-          住所：〒196-0033 東京都立川市栄町5-54-26
-          -# = @contact.school_name
+          = t ".住所：〒196-0033 東京都立川市栄町5-54-26"
         .main_contact_telephone
-          電話番号：042(543)0816
-          -# = @contact.telephone
+          = t ".電話番号：042(543)0816"
         .main_contact_person
-          連絡担当者：鈴木賢（すずきまさる）
-          -# = @contact.person_name
+          = t ".連絡担当者：鈴木賢（すずきまさる）"
