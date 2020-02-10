@@ -7,8 +7,6 @@ class KidsController < ApplicationController
     @kid = Kid.new(kid_params)
     if @kid.save
       redirect_to kids_path, notice: '児童情報を作成しました'
-    else
-      render :kids_path
     end
   end
 
@@ -31,7 +29,7 @@ class KidsController < ApplicationController
 
   private
   def kid_params
-    params.require(:kid).permit(:name, :sex, :image, user_ids: [])
+    params.require(:kid).permit(:name, :sex, :image, :group_id, user_ids: [])
   end
   
 end

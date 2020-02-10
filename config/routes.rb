@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     
     resources :users, only: [:new, :create, :edit, :update, :destroy]
     
-    resources :kids, only: [:index] do
+    resources :kids, only: [:index, :create] do
       resources :notices, only: [:index, :create]
       resources :diaries, only: [:index, :create]
       resources :messages, only: [:index, :create]
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
       resources :pictures, only: [:index, :create, :show]
       resources :contacts, only: [:index, :create]
     end
-  end
-
-  namespace :admin do
-    resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
+    
+    namespace :admin do
+      resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
+    end
   end
 end

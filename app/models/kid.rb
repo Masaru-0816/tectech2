@@ -7,5 +7,5 @@ class Kid < ApplicationRecord
   has_many :diaries
   has_many :messages
   
-  enum sex: {男:0, 女:1}
+  enum sex: { man: 0, woman: 1 }
 end
