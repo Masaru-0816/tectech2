@@ -76,3 +76,4 @@ gem 'pry-rails'
 gem 'strong_password', '~> 0.0.8'
 
 gem 'gmaps4rails'
+gem "geocoder"
