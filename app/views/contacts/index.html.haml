@@ -43,7 +43,7 @@
       .main_header_user
         %h 
           = t ".あなたのお名前"
-        %p #{current_user.name}
+        %p #{current_user.name}さん
       .main_header_menu
         = link_to edit_user_path(current_user), class:"btn-edit" do
           %i.fas.fa-pen 
@@ -81,7 +81,6 @@
         var center = {
           lat: 35.6979,
           lng: 139.4137,
-          icon: "favicon5.ico"
         };
         
         function initMap(){
@@ -106,8 +105,6 @@
               infoWindow.open(map, marker); // 吹き出しの表示
             });
           });
-
-
         }
         
         function codeAddress(){

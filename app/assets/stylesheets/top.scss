@@ -252,16 +252,17 @@
     width: 100vw;
     padding-bottom: 40px;
     display: flex;
-    &_left {
+    &_link {
       padding-top: 200px;  
       text-align: center;
       height: 100%;
       width: 100%;
-      color: rgba(255, 255, 255, 0.705);
       font-size: 30px;
+      a {
+        color: rgba(255, 255, 255, 0.705);
+        text-decoration: none;
+      }
     }
-    &_right {
-  }
   }
 
     .footer {

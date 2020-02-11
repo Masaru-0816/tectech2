@@ -6,9 +6,8 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /ja|en/ do
 
-    root 'top#index'  
+    root 'top#index'
 
-    
     resources :users, only: [:new, :create, :edit, :update, :destroy]
     
     resources :kids, only: [:index, :create] do
