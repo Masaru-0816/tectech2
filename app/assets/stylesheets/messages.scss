@@ -141,36 +141,29 @@
       width: 100%;
       &_list {
         overflow: scroll;
-        height: calc(100% - 60px);
+        height: calc(100% - 70px);
         width: 100%;
         padding: 30px 30px;
-        .messages {
-          .message-list {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 12px;
-            .message-name {
-              color: #333;
-              height: 30px;
-              line-height: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            }
-            .message-date {
-              color: #999;
-              height: 30px;
-              font-size: 14px;
-              padding-left: 10px;
-            }
-          }
-          .message-content {
-            color: #333;
-            height: 25px;
-            line-height: 25px;
-            font-size: 14px;
-          }
+        margin-bottom: 12px;
+        color: #333;
+        &_name {
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &_date {
+          height: 30px;
+          font-size: 12px;
+          padding-left: 10px;
+          float: right;
+        }
+        &_content {
+          height: 25px;
+          line-height: 25px;
+          font-size: 20px;
+          margin-bottom: 20px;
+          border-bottom: 3px dotted rgb(148, 145, 145);
         }
       }
       

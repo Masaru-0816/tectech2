@@ -43,7 +43,7 @@
       .main_header_user
         %h 
           = t ".あなたのお名前"
-        %p #{current_user.name}
+        %p #{current_user.name}さん
       .main_header_menu
         = link_to edit_user_path(current_user), class:"btn-edit" do
           %i.fas.fa-pen 
@@ -51,11 +51,50 @@
           %i.fas.fa-undo-alt
 
     .main_albums
-      - @albums.each do |album|
-        .main_album
-          .main_pic_title
-            = album.title
-          .main_album_image
-            = image_tag album.image.url, class: 'album_image'
-          .main_album_date
-            = album.date
+      .main_album
+        .main_album_title
+          %p 保育園の様子1
+        .main_album_image
+          = image_tag "kg1.jpg", size: '400x300'
+        .main_album_date
+          %p 2020.02.08
+
+      .main_album
+        .main_album_title
+          %p 保育園の様子2
+        .main_album_image
+          = image_tag "kg6.jpg", size: '400x300'
+        .main_album_date
+          %p 2019.10.15
+
+      .main_album
+        .main_album_title
+          %p 保育園の様子3
+        .main_album_image
+          = image_tag "kg3.jpg", size: '400x300'
+        .main_album_date
+          %p 2019.8.16
+
+      .main_album
+        .main_album_title
+          %p 保育園の様子4
+        .main_album_image
+          = image_tag "kg4.jpg", size: '400x300'
+        .main_album_date
+          %p 2019.09.15
+
+      .main_album
+        .main_album_title
+          %p 保育園の様子5
+        .main_album_image
+          = image_tag "kg5.jpg", size: '400x300'
+        .main_album_date
+          %p 2019.07.01
+
+      .main_album
+        .main_album_title
+          %p 保育園の様子6
+        .main_album_image
+          = image_tag "kg7.jpg", size: '400x300'
+        .main_album_date
+          %p 2020.02.10

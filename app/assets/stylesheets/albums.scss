@@ -143,16 +143,16 @@
       flex-wrap: wrap;
       overflow: auto;
       .main_album {
-        height: 50%;
-        width: calc(100% / 3);
+        height: 400px;
+        width: calc(100% / 2);
         padding: 0px 20px 20px;
         &_title {
         }
+        &_date {
+          height: 20px;
         &_image {
           height: 200px;
         }
-        &_date {
-          height: 20px;
         }
       }
     }
