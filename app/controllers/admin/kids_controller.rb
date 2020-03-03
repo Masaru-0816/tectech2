@@ -3,7 +3,7 @@ class Admin::KidsController < ApplicationController
   # before_action :set_kids, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    # @admin= Admin.find(params[:admin_id])
+    @admin= Admin.find(params[:admin_id])
     @kid = Kid.new
     @kids = Kid.includes(:user)
   end
