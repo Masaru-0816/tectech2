@@ -1,19 +1,17 @@
 .admin__body
-  .admin__header
-    .admin__header__logo
-      = link_to root_path, class:"btn-logo" do
-        = image_tag "logo1.png", size: "80x100", alt: "logo"
-    .admin__header__title
-      %h1 ユーザー管理者ページ
+  = render "admin/admin.side.bar"
   .admin__main
-    .admin__main__buttons
-      .admin__main__button
-        %h2　児童登録
-      .admin__main__button
-        %h2　投稿
-      .admin__main__button
-        %h2　メッセージ
-      .admin__main__button
-        %h2　写真
-
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(current_user), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
 
