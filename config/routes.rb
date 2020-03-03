@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  # ユーザー登録
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  # 日本語/英語切り替えスコープ
   scope "(:locale)", locale: /ja|en/ do
 
+    # トップ画面
     root 'top#index'
 
     resources :users, only: [:new, :create, :edit, :update, :destroy]
@@ -19,7 +22,8 @@ Rails.application.routes.draw do
       resources :contacts, only: [:index, :create]
     end
     
-    namespace :admin do
+    # 管理者ページ
+    resources :admin, only: [:index] do
       resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
     end
   end

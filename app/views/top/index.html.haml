@@ -38,11 +38,11 @@
             = t ".ログイン"
 
       -# 管理者ページ
-      -# -if @current_user.admin?
-      -#   .header_user_menu
-      -#     = link_to root_path, class:"btn" do
-      -#       %p 
-      -#         = t ".管理者ページ"
+      -if current_user&.admin?
+        .header_user_menu
+          = link_to admin_index_path, class:"btn" do
+            %p 
+              = t ".管理者ページ"
 
         
   .main

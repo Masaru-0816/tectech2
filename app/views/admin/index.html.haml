@@ -1,0 +1,17 @@
+.admin__body
+  = render "admin/admin.side.bar"
+  .admin__main
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(current_user), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
+

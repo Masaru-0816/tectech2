@@ -1,31 +1,22 @@
-.wrapper {
+.admin__body {
   margin: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
-  background-color: rgb(252, 233, 164);
+  background-color: rgb(219, 225, 191);
 
-  .side_bar {
+  .admin__side__bar {
     z-index: 1;
     height: 100vh;
     width: 300px;
     text-align: center;
     font-size: 80px;
     border-right: 1px solid rgb(139, 139, 139);
-    
-    &_notice {
+    &__logo {
       padding: 20px 0px;
       height: calc(100% / 5);
-      i {
-        text-decoration: none;
-        color: red;
-      }
-      p {
-        font-size: 20px;
-      }
     }
-    
-    &_diary {
+    &__kid {
       padding: 20px 0px;
       height: calc(100% / 5);
       i {
@@ -36,20 +27,18 @@
         font-size: 20px;
       }
     }
-    
-    &_message {
+    &__information {
       padding: 20px 0px;
       height: calc(100% / 5);
       i {
         text-decoration: none;
-        color: rgb(51, 255, 0);
+        color: rgb(36, 177, 1);
       } 
       p {
         font-size: 20px;
       }
     }
-    
-    &_album {
+    &__message {
       padding: 20px 0px;
       height: calc(100% / 5);
       i {
@@ -60,8 +49,7 @@
         font-size: 20px;
       }   
     }
-    
-    &_contact {
+    &__album {
       padding: 20px 0px;
       height: calc(100% / 5);
       i {
@@ -74,14 +62,14 @@
     }
   }
     
-  .main {
+  .admin__main {
     height: 100%;
     width: calc(100% - 300px);
-    &_header {
+    &__header {
       height: 20%;
       display: flex;
       border-bottom: 1px solid rgb(139, 139, 139);
-      &_kid {
+      &__name {
         padding: 20px 30px;
         width: 40%;
         display: flex;
@@ -98,7 +86,7 @@
           margin: 0 auto;
         }
       }
-      &_user {
+      &__user {
         padding: 20px 30px;
         width: 40%;
         display: flex;
@@ -115,7 +103,7 @@
           margin: 0 auto;
         }
       }
-      &_menu {
+      &__menu {
         width: 20%;
         font-size: 30px;
         display: flex;
