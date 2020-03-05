@@ -1,45 +1,41 @@
-#account_page_kids
-  .account_page_kids__innner.clearfix
-    .account_page_kids__innner__left.account_page__header
-      %h2 Create New Kids
-      %h5 新規児童情報の作成
-      -# = render "devise/shared/links"
-    .account_page_kids__innner__right.user_form
-      = form_for [@admin, @kid] do |f|
-        -# = devise_error_messages!
-        .field
-          .filed_label
-            = f.label :name, local: true do
-              = f.text_field :name, placeholder: '児童名を入力してください'
-        .field
-          .filed_sex
-            %p 性別
-            = form.label :sex, "男性", {value: 0} do
-            = form.radio_button :sex, :man
-            = form.label :sex, "女性", {value: 1} do
-            = form.radio_button :sex, :woman
-
-        .field
-          %p クラス
-          %label
-            = f.radio_button :group_id, "1"
-            たんぽぽ
-          %label
-            = f.radio_button :group_id, "2"
-            ちゅーりっぷ
-          %label
-            = f.radio_button :group_id, "3"
-            あじさい
-          %label
-            = f.radio_button :group_id, "4"
-            ひまわり
-          %label
-            = f.radio_button :group_id, "5"
-            さくら
-        .field
-          .filed_label
-            = f.label :image do
-              = icon("fas", "image", class: "icon")
-              = f.file_field :image, class: "hidden"
-        .actions
-          = f.submit "Create Kid's Account", class: 'btn'
+.admin__body
+  = render "admin.side.bar"
+  .admin__main
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(id: current_user.id), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
+    .admin__main__kids
+      .admin__main__kids__title
+        = t ".児童一覧"
+    
+      - @groups.each do |group|
+        .admin__main__kids__box
+          .admin__main__kids__box__class
+            = group.name
+          - group.kids.each do |kid|
+            .admin__main__kids__box__index
+              .admin__main__kids__box__index__photo
+                -# = image_tag kid.image, size:"50x50"
+                = image_tag "kii.jpg", width: 100
+              .admin__main__kids__box__index__name
+                = kid.name
+              .admin__main__kids__box__index__gender
+                = kid.sex
+              .admin__main__kids__box__index__user
+                = kid.users.name
+              = link_to root_path do
+                .admin__main__kids__box__index__edit
+                  %p 編集
+              = link_to root_path do
+                .admin__main__kids__box__index__delete
+                  %p 削除
