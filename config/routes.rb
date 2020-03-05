@@ -23,8 +23,11 @@ Rails.application.routes.draw do
     end
     
     # 管理者ページ
-    resources :admin, only: [:index] do
+    namespace :admin do
       resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
+      resources :notices, only: [:index, :create]
+      resources :messages, only: [:index, :create]
+      resources :albums, only: [:index, :create]
     end
   end
 end

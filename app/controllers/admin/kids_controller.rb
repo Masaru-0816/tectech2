@@ -1,11 +1,9 @@
 class Admin::KidsController < ApplicationController
   before_action :if_not_admin
-  # before_action :set_kids, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @admin= Admin.find(params[:admin_id])
-    @kid = Kid.new
-    @kids = Kid.includes(:user)
+    @kids = Kid.all
+    @groups = Group.all
   end
 
   def new
@@ -40,10 +38,6 @@ class Admin::KidsController < ApplicationController
   end
 
   def if_not_admin
-    redirect_to root_path unless current_user.admin?
+    redirect_to root_path unless current_user&.admin?
   end
-
-  # def set_kids
-  #   @kid = Kid.find(params[:kid_id])
-  # end
 end
