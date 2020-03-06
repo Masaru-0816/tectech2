@@ -1,11 +1,13 @@
 class Kid < ApplicationRecord
   has_many :kids_users
   has_many :users, through: :kids_users
+  accepts_nested_attributes_for :users
   has_many :notices
   has_many :albums
   belongs_to :group
   has_many :diaries
   has_many :messages
+  mount_uploader :image, ImageUploader
   
   enum sex: { 男の子: 0, 女の子: 1 }
 end
