@@ -10,6 +10,7 @@ class Admin::KidsController < ApplicationController
 
   def new
     @kid = Kid.new
+    @kid.users.new
   end
 
   def create
@@ -37,7 +38,8 @@ class Admin::KidsController < ApplicationController
   
   private
   def kid_params
-    params.require(:kid).permit(:name, :sex, :group_id, :image, users_attributes: [:name])
+    params.require(:kid).permit(
+      :name, :sex, :group_id, :image, user_ids: [])
   end
 
   def if_not_admin
