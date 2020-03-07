@@ -45,11 +45,9 @@
               .field
                 .field-label
                   = "利用者のお名前"
-                = f.fields_for :users, @kid.users.build do |p|
-                  = p.label :name
-                  -# , for:"kid_user", class: "kid_user_select" do
-                  -#   .field-input
-                  = p.collection_select :name, User.all, :id, :name, prompt:true
+                = f.collection_check_boxes :user_ids, User.all, :id, :name, prompt:true do |ff|
+                  = ff.label {ff.check_box + ff.text}
+                  .field-input
             .admin__main__kids__registration__form__image
               .field
                 .field-label
