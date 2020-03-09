@@ -47,7 +47,7 @@
         .main_kids_selectlist
           = link_to kid_notices_path(kid) do
             .main_kids_selectlist_image
-              = image_tag kid.image, width:300
+              = image_tag kid.image.url, width:300
             .main_kids_selectlist_name
               -if kid.sex == 0
                 %p #{kid.name}くん

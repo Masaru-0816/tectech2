@@ -146,7 +146,7 @@
           font-size: 25px;
           line-height: 70px;
           border-bottom: dotted 0.3px #093e01;
-          &__photo {
+          &__image {
             margin-left: 20px;
             img {
               border-radius: 50px;
@@ -158,7 +158,7 @@
             width: 200px;
             text-align: center;
           }
-          &__gender {
+          &__sex {
             margin-left: 40px;
             // background-color: rgb(212, 66, 9);
             width: 100px;
@@ -188,7 +188,32 @@
             text-decoration: none;
             color: #fff;
           }
-
+        }
+      }
+      &__registration {
+        padding: 30px 60px;
+        &__title {
+          padding: 10px 20px;
+          height: 30px;
+          background-color: rgb(117, 212, 9);
+          padding-bottom: 20px;
+          p {
+            font-size: 30px;
+          }
+        }
+        &__form {
+          padding: 10px 20px;
+          height: 500px;
+          width: 100%;
+          font-size: 30px;
+          .field {
+            width: 800px;
+            display: flex;
+            padding-bottom: 30px;
+            .field-label {
+              padding-right: 30px;
+            }
+          }
         }
       }
     }

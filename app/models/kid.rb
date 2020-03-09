@@ -6,6 +6,7 @@ class Kid < ApplicationRecord
   belongs_to :group
   has_many :diaries
   has_many :messages
+  mount_uploader :image, ImageUploader
   
   enum sex: { 男の子: 0, 女の子: 1 }
 end

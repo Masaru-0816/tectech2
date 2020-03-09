@@ -24,12 +24,11 @@
             = group.name
           - group.kids.each do |kid|
             .admin__main__kids__box__index
-              .admin__main__kids__box__index__photo
-                -# = image_tag kid.image, size:"50x50"
-                = image_tag "kii.jpg", width: 100
+              .admin__main__kids__box__index__image
+                = image_tag kid.image.url, size: "80x80"
               .admin__main__kids__box__index__name
                 = kid.name
-              .admin__main__kids__box__index__gender
+              .admin__main__kids__box__index__sex
                 = kid.sex
               .admin__main__kids__box__index__user
                 = kid.users.name
