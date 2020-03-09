@@ -52,25 +52,36 @@
               .field
                 .field-label
                   = "画像"
-                = f.label :image, for:"kid_image", class:"kid_image_select" do 
+                = f.label :image, for:"present_img", class:"kid_image_select" do 
                   .field-input
                     = f.file_field :image, class: "hidden"
-                  -# = image_tag @kid.img.url, id: :img_prev if @kid.image?
+                  .field-img_prev
 
-                  -# :javascript
-                  -#   $(function() {
-                  -#   function readURL(input) {
-                  -#     if (input.files && input.files[0]) {
-                  -#       var reader = new FileReader();
-                  -#       reader.onload = function (e) {
-                  -#         $('#img_prev').attr('src', e.target.result);
+                  -# - if @kid.image.present?
+                  -#   = image_tag @kid.img.url, id: :img_prev, class: "present_img"
+                  -#   %label
+                  -#     = f.check_box :remove_image
+                  -#     画像を削除
+                  -# - else
+                  -#   = image_tag "back2.jpg", id: :img_prev, class: "present_image"
+                  -#   :javascript
+                  -#     $(function() {
+                  -#     function readURL(input) {
+                  -#       if (input.files && input.files[0]) {
+                  -#         var reader = new FileReader();
+                  -#         reader.onload = function (e) {
+                  -#           $('#img_prev').attr('src', e.target.result);
+                  -#         }
+                  -#         reader.readAsDataURL(input.files[0]);
                   -#       }
-                  -#       reader.readAsDataURL(input.files[0]);
                   -#     }
-                  -#   }
-                  -#   $("#kid_img").change(function(){
-                  -#     readURL(this);
-                  -#   });
-                  -#   });
+                  -#       $("#kid_img").change(function(){
+                  -#         $('#img_prev').removeClass('hidden');
+                  -#         $('.present_img').remove();
+                  -#         readURL(this);
+                  -#       });
+                  -#     });
+
+                      
             .actions
               = f.submit "新規登録", class: 'btn'
