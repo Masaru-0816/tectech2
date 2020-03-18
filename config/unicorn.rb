@@ -1,5 +1,5 @@
 #サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
-app_path = File.expand_path('../../../', __FILE__)
+rails_root = File.expand_path('../../../', __FILE__)
 
 #アプリケーションサーバの性能を決定する
 worker_processes 1
@@ -8,17 +8,17 @@ worker_processes 1
 working_directory rails_root
 
 #Unicornの起動に必要なファイルの設置場所を指定
-pid "#{app_path}/shared/tmp/pids/unicorn.pid"
+pid "#{rails_root}/shared/tmp/pids/unicorn.pid"
 
 #ポート番号を指定
 # listen 3000
-listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
+listen "#{rails_root}/shared/tmp/sockets/unicorn.sock"
 
 #エラーのログを記録するファイルを指定
-stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
+stderr_path "#{rails_root}/shared/log/unicorn.stderr.log"
 
 #通常のログを記録するファイルを指定
-stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
+stdout_path "#{rails_root}/shared/log/unicorn.stdout.log"
 
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
