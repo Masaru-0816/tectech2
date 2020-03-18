@@ -122,11 +122,12 @@
       width: 100%;
       overflow: scroll;
       &__title {
-        background-color: orange;
+        background-color: rgb(57, 106, 61);
         height: 30px;
         line-height: 30px;
         font-weight: bold;
         padding-left: 30px;
+        color: #fff;
       }
       &__box {
         width: 100%;

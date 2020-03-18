@@ -44,8 +44,8 @@
           %i.fas.fa-undo-alt
 
     .main_albums
-      -# .main_pictures_group
-      -#   #{@kid.group.name}組の写真🎵
+      .main_pictures_group
+        #{@kid.group.name}組の写真🎵
       - @kid.group.pictures.each do |picture|
         .main_album
           .main_album_name

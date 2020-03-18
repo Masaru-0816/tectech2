@@ -1,0 +1,49 @@
+.admin__body
+  = render "/admin/admin.side.bar"
+  .admin__main
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(id: current_user.id), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
+    .admin__main__notice
+      .admin__main__notice__title
+        お知らせ一覧  
+      .admin__main__notice__new
+        = link_to new_admin_notice_path, class:"btn-notice-new" do
+          %i.fas.fa-pen
+          新規投稿
+      .admin__main__notice__box
+        - @groups.each do |group|
+          .admin__main__notice__box__class
+            = group.name 
+          - group.notices.each do |notice|
+            .admin__main__notice__box__index
+              .admin__main__notice__box__index__top
+                .admin__main__notice__box__index__top__title
+                  %h 件名: 
+                  = notice.title
+                .admin__main__notice__box__index__top__time
+                  = notice.updated_at.to_s(:updated_at) 
+              .admin__main__notice__box__index__content
+                = notice.content
+              
+              .admin__main__notice__box__index__addition
+                = link_to root_path do
+                  .admin__main__notice__box__index__addition__edit
+                    %p 編集
+                = link_to root_path do
+                  .admin__main__notice__box__index__addition__delete
+                    %p 削除
+
+
+
+

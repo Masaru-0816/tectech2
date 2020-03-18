@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :notices, only: [:index, :create]
       resources :diaries, only: [:index, :create]
       resources :messages, only: [:index, :create]
-      resources :albums, only: [:index, :create, :show]
+      resources :albums, only: [:index, :create]
       resources :pictures, only: [:index, :create, :show]
       resources :contacts, only: [:index, :create]
     end
@@ -25,9 +25,9 @@ Rails.application.routes.draw do
     # 管理者ページ
     namespace :admin do
       resources :kids, only: [:index, :new, :create, :show, :edit, :destroy]
-      resources :notices, only: [:index, :create]
+      resources :notices, only: [:index, :new, :create]
       resources :messages, only: [:index, :create]
-      resources :albums, only: [:index, :create]
+      resources :albums, only: [:index, :new, :create]
     end
   end
 end

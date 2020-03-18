@@ -135,24 +135,67 @@
     } 
 
     
-    &_albums {
+    &__album {
       height: 80%;
       width: 100%;
-      padding: 30px 40px;
+      // padding: 30px 40px;
       display: flex;
       flex-wrap: wrap;
       overflow: auto;
-      .main_album {
-        height: 400px;
-        width: calc(100% / 2);
-        padding: 0px 20px 20px;
-        &_title {
-        }
-        &_date {
-          height: 20px;
-        &_image {
-          height: 200px;
-        }
+      // .main_album {
+      //   height: 400px;
+      //   width: calc(100% / 2);
+      //   padding: 0px 20px 20px;
+      //   &_title {
+      //   }
+      //   &_date {
+      //     height: 20px;
+      //   &_image {
+      //     height: 200px;
+      //   }
+      //   }
+      // }
+      &__box {
+        background-color: orange;
+        height: 30px;
+        width: 100%;
+        padding-left: 30px;
+        font-weight: bold;
+        &__indexes {
+          margin-top: 30px;
+          display: flex;
+          flex-wrap: wrap;
+          overflow: auto;
+          &__index {
+            background-color: rgba(223, 165, 39, 0.87);
+            padding: 20px 20px;
+            border-radius: 30px;
+            margin: 0 10px 20px;
+            &__top {
+              font-size: 20px;
+              display: flex;
+              justify-content: space-between;
+              &__title {
+                font-weight: bold;
+                margin-bottom: 10px;
+              }
+              &__time {
+                text-align: end;
+                font-size: 14px;
+                margin-left: 10px;
+              }
+            }
+            &__image {
+              text-align: center;
+            }
+            &__addition {
+              display: flex;
+              justify-content: flex-end;
+              &__edit {
+                padding-right: 20px;
+              } 
+            }
+          }
         }
       }
     }

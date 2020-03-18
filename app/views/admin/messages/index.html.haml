@@ -1,0 +1,51 @@
+.admin__body
+  = render "/admin/admin.side.bar"
+  .admin__main
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(id: current_user.id), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
+    .admin__main__message
+      .admin__main__message__title
+        メッセージ一覧  
+      .admin__main__message__indexes
+        - @messages.each do |message|
+          .admin__main__message__indexes__index
+            .admin__main__message__content
+              = message.content
+            .admin__main__message__user
+              = "(by #{message.user.name}: #{message.kid.name})"
+            .admin__main__message__time
+              = message.updated_at.to_s(:updated_at) 
+              - if message.image?
+                = image_tag message.image.url, size: "200x200"
+      = form_for @message, url:admin_messages_path, method: :get do |f|
+        .admin__main__message__new
+          .admin__main__message__new__top
+            .admin__main__message__new__top__user
+              .admin__main__message__new__top__user__title
+                利用者を選択して下さい
+              .admin__main__message__new__top__user__select
+                = f.collection_check_boxes :user_id, User.all, :id, :name, prompt:true do |ff|
+                  = ff.label {ff.check_box + ff.text}
+            .admin__main__message__new__top__kid
+              .admin__main__message__new__top__kid__title
+                児童を選択して下さい
+              .admin__main__message__new__top__kid__select
+                = f.collection_check_boxes :kid_id, Kid.all, :id, :name, prompt:true do |ff|
+                  = ff.label {ff.check_box + ff.text}
+          .admin__main__message__new__bottom
+            .admin__main__message__new__bottom__content
+              = f.text_area :content, cols:"130", rows: "8", placeholder: "メッセージを入力して下さい"
+            .admin__main__message__new__bottom__btn
+              = f.submit "新規メッセージ送信", class: 'message_btn'
+          

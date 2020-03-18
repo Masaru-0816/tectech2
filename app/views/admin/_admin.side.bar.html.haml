@@ -10,16 +10,19 @@
         = t ".児童登録"
 
   .admin__side__bar__information
-    %i.far.fa-newspaper
-    %p 
-      = t ".投稿"
+    = link_to admin_notices_path do
+      %i.far.fa-newspaper
+      %p 
+        = t ".投稿"
 
   .admin__side__bar__message
-    %i.far.fa-comments
-    %p 
-      = t ".メッセージ"
+    = link_to admin_messages_path do
+      %i.far.fa-comments
+      %p 
+        = t ".メッセージ"
 
   .admin__side__bar__album
-    %i.fas.fa-camera-retro
-    %p 
-      = t ".写真"
+    = link_to admin_albums_path do
+      %i.fas.fa-camera-retro
+      %p 
+        = t ".写真"

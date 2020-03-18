@@ -1,0 +1,81 @@
+.admin__main {
+  height: 100%;
+  width: calc(100% - 300px);
+  &__message {
+    height: 80%;
+    width: 100%;
+    &__title {
+      background-color: rgb(57, 106, 61);
+      height: 30px;
+      line-height: 30px;
+      font-weight: bold;
+      padding-left: 30px;
+      color: #fff;
+    }
+    &__indexes{
+      height: 30%;
+      margin: 20px 30px;
+      padding: 10px 20px;
+      background-color: rgba(245, 244, 244, 0.87);
+      border-radius: 10px;
+      overflow: scroll;
+      &__index {
+        display: flex;
+        padding-bottom: 10px;
+        .admin__main__message__content {
+        }
+        .admin__main__message__user {
+          padding-left: 10px;
+        }
+        .admin__main__message__time {
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+    &__new {
+      margin: 20px 30px;
+      height: 40%;
+      &__top {
+        margin-bottom: 20px;
+        display: flex;
+        font-size: 20px;
+        &__user {
+          height: 40%;
+          width: calc(100%/2);
+          &__select {
+            padding: 10px 20px;
+            height: 90px;
+            background-color: skyblue;
+            border: solid 1px rgb(150, 150, 150);
+            overflow: scroll;
+          }
+        }
+        &__kid {
+          height: 40%;
+          width: calc(100%/2);
+          margin-left: 40px;
+          &__select {
+            padding: 10px 20px;
+            height: 90px;
+            background-color: orange;
+            border: solid 1px rgb(150, 150, 150);
+            overflow: scroll;
+          }
+        }
+      }
+      &__bottom {
+        
+        &__content {
+          height: 40%;
+          margin-bottom: 20px;
+          .form {
+            padding: 20px;
+          }
+        }
+        &__btn {
+          
+        }
+      }
+    }
+  }
+}

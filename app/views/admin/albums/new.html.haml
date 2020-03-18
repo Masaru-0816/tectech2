@@ -1,0 +1,33 @@
+.admin__body
+  = render "/admin/admin.side.bar"
+  .admin__main
+    .admin__main__header
+      .admin__main__header__name
+        %p 
+          = t ".ユーザー管理者ページ"
+      .admin__main__header__user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .admin__main__header__menu
+        = link_to edit_user_path(id: current_user.id), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to destroy_user_session_path, class:"btn" do
+          %i.fas.fa-sign-out-alt
+    .admin__main__album
+      = form_for @album, url:admin_albums_path, method: :post do |f|
+        .admin__main__album__title
+          新規アルバム投稿
+        .admin__main__album__form
+          .admin__main__album__form__class
+            = f.collection_check_boxes :group_ids, Group.all, :id, :name, prompt:true do |ff|
+              = ff.label {ff.check_box + ff.text}
+          .admin__main__album__form__title
+            件名：
+            = f.text_field :title, placeholder: "入力して下さい"
+          .admin__main__album__form__image
+            = f.label :image, class:"notice_image" do
+              .field-input
+                = f.file_field :image, class: "hidden"
+          .admin__main__album__form__btn
+            = f.submit "新規アルバム投稿", class: 'notice_btn'

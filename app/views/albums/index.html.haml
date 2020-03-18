@@ -1,100 +1,66 @@
--# .wrapper_notices
--#   .side_bar
--#     .side_bar_notice
--#       = link_to kid_notices_path(@kid), class:"btn-information" do
--#         %i.far.fa-newspaper
--#         %p 
--#           = t ".お知らせ"
+.wrapper_notices
+  .side_bar
+    .side_bar_notice
+      = link_to kid_notices_path(@kid), class:"btn-information" do
+        %i.far.fa-newspaper
+        %p 
+          = t ".お知らせ"
 
--#     .side_bar_diary
--#       = link_to kid_diaries_path(@kid), class:"btn-diary" do
--#         %i.fas.fa-pencil-alt    
--#         %p 
--#           = t ".日誌"
+    .side_bar_diary
+      = link_to kid_diaries_path(@kid), class:"btn-diary" do
+        %i.fas.fa-pencil-alt    
+        %p 
+          = t ".日誌"
 
--#     .side_bar_message
--#       = link_to kid_messages_path(@kid), class:"btn-message" do
--#         %i.far.fa-comments
--#         %p 
--#           = t ".メッセージ"
+    .side_bar_message
+      = link_to kid_messages_path(@kid), class:"btn-message" do
+        %i.far.fa-comments
+        %p 
+          = t ".メッセージ"
 
--#     .side_bar_album
--#       = link_to kid_albums_path(@kid), class:"btn-picture" do
--#         %i.fas.fa-camera-retro
--#         %p 
--#           = t ".写真"
+    .side_bar_album
+      = link_to kid_albums_path(@kid), class:"btn-picture" do
+        %i.fas.fa-camera-retro
+        %p 
+          = t ".写真"
 
--#     .side_bar_contact
--#       = link_to kid_contacts_path(@kid), class:"btn-contact" do
--#         %i.fas.fa-phone
--#         %p 
--#           = t ".お問い合わせ"
+    .side_bar_contact
+      = link_to kid_contacts_path(@kid), class:"btn-contact" do
+        %i.fas.fa-phone
+        %p 
+          = t ".お問い合わせ"
 
--#   .main
--#     .main_header
--#       .main_header_kid
--#         %h 
--#           = t ".お子様のお名前"
--#         -if @kid.sex == 0
--#           %p #{@kid.name}くん
--#         -else
--#           %p #{@kid.name}ちゃん
--#         %p #{@kid.group.name}組
--#       .main_header_user
--#         %h 
--#           = t ".あなたのお名前"
--#         %p #{current_user.name}さん
--#       .main_header_menu
--#         = link_to edit_user_path(current_user), class:"btn-edit" do
--#           %i.fas.fa-pen 
--#         = link_to kids_path, class:"btn" do
--#           %i.fas.fa-undo-alt
+  .main
+    .main_header
+      .main_header_kid
+        %h 
+          = t ".お子様のお名前"
+        -if @kid.sex == "0"
+          %p #{@kid.name}くん
+        -else
+          %p #{@kid.name}ちゃん
+        %p #{@kid.group.name}組
+      .main_header_user
+        %h 
+          = t ".あなたのお名前"
+        %p #{current_user.name}さん
+      .main_header_menu
+        = link_to edit_user_path(current_user), class:"btn-edit" do
+          %i.fas.fa-pen 
+        = link_to kids_path, class:"btn" do
+          %i.fas.fa-undo-alt
 
--#     .main_albums
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子1
--#         .main_album_image
--#           = image_tag "kg1.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2020.02.08
-
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子2
--#         .main_album_image
--#           = image_tag "kg6.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2019.10.15
-
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子3
--#         .main_album_image
--#           = image_tag "kg3.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2019.8.16
-
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子4
--#         .main_album_image
--#           = image_tag "kg4.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2019.09.15
-
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子5
--#         .main_album_image
--#           = image_tag "kg5.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2019.07.01
-
--#       .main_album
--#         .main_album_title
--#           %p 保育園の様子6
--#         .main_album_image
--#           = image_tag "kg7.jpg", size: '400x300'
--#         .main_album_date
--#           %p 2020.02.10
+    .main__album
+      .main__album__box
+        #{@kid.group.name}組の写真🎵
+        .main__album__box__indexes
+          - @albums.each do |album|
+            .main__album__box__indexes__index
+              .main__album__box__indexes__index__top
+                .main__album__box__indexes__index__top__title
+                  %h 件名: 
+                  = album.title
+                .main__album__box__indexes__index__top__time
+                  = album.updated_at.to_s(:updated_at) 
+              .main__album__box__indexes__index__image
+                = image_tag album.image.url, size: "200x200"
