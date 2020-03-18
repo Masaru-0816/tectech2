@@ -6,7 +6,7 @@
 
     .header_logo
       = link_to root_path, class:"btn-logo" do
-        = image_tag "logo1.png", size: "80x100", alt: "logo"
+        %img{:src => "/images/logo1.png"}
     .header_language
       = link_to root_path(locale: "ja") do
         %p Japanese　/
@@ -48,7 +48,7 @@
   .main
     .main_copyrights
     .main_pic
-      = image_tag "top2.jpg", size: "850x700", alt:"top2"
+      %img{:src => "/images/top2.jpg"}
     .main_about
       %h1 
         = t ".テクノロジーで"
@@ -66,7 +66,7 @@
         = t ".そんな想いから生まれたサービスです。"
     %a{ :id =>  'anchor1' } 
     .service_right
-      = image_tag "top3.jpg", size: "850x700", alt:"top2"
+      %img{:src => "/images/top3.jpg"}
 
   .account
     .account_link
